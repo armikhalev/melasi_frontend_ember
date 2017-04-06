@@ -1,0 +1,54 @@
+.koylaPage {
+    position: relative;
+    margin: auto;
+    width: 50%;
+
+    input[type="text"] {
+        width: 100%;
+        height: 50px;
+        border-radius: 4px;
+        background-color: #f8f8f8;
+        resize: none;
+        font-size: 30px;
+        color: indianred;
+    }
+
+    .formHeader {
+        margin-top: 24px;
+        color: tan;
+        font-size: 24px;
+
+        &:first-letter {
+            text-transform:capitalize;
+        }
+    }
+
+      .formHeader {
+          color: mediumblue;
+          margin: 10px 106px;
+          text-align: center;
+          font-size: large;
+          border-bottom: 1px solid brown;
+    }
+
+    .translationDiv {
+        height: 50px;
+        width: 100%;
+        background-color: beige;
+        font-size: 24px;
+        text-align: center;
+        margin-top: 24px;
+        padding-top: 8%;
+    }
+
+    .button {
+        margin: 10px 0;
+        background-color: burlywood;
+        padding: 9px;
+        font-size: 14px;
+        font-family: sans-serif;
+        font-style: normal;
+        font-weight: bolder;
+        color: darkcyan;
+    }
+}

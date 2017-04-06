@@ -7,6 +7,8 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.route('koyla', {path: '/koyla'});
+  this.route('latay', {path: '/latay'});
 });
 
 export default Router;
