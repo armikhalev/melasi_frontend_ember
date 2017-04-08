@@ -1,0 +1,41 @@
+.navbar {
+    position: fixed;
+    width: 100%;
+    bottom: 0px;
+    .container {
+        background: #ff8b4d;
+        display: flex;
+        justify-content: center;
+    }
+
+    .collapse {
+       
+    }
+
+    .navbar-ul {
+
+    }
+
+    .navbar-ul li {
+        display: inline-flex;
+        margin-left: 10px;
+        margin-right: 10px;
+        border-right: 1px solid floralwhite;
+        border-left: 1px solid floralwhite;
+        padding-left: 10px;
+        padding-right: 10px;
+        background: initial;
+        transition: background .2s;
+    }
+
+    .navbar-ul li:hover,
+    .navbra-ul li a:hover {
+        background: rgba(195, 140, 132, 0.84);
+    }
+
+    .navbar-ul li a {
+        text-decoration: none;
+        font-size: 20px;
+        color: floralwhite;
+    }
+}

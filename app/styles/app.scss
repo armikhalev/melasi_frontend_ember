@@ -1,3 +1,7 @@
-@import "nav-bar";
-@import "latay";
-@import "koyla";
+@import 'nav-bar';
+
+body {
+    width: 100%;
+    position: relative;
+    margin: 0;
+}

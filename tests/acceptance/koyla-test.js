@@ -1,10 +1,18 @@
 import { test } from 'qunit';
 import moduleForAcceptance from 'melasi-frontend-ember/tests/helpers/module-for-acceptance';
 
-moduleForAcceptance('Acceptance | koyla');
+moduleForAcceptance('Acceptance | koyla', {
+        beforeEach: function() {
+            visit('/koyla');
+        }
+    }
+);
 
 test('Typing "ab" in input should show words starting with "ab-" ', function (assert) {
-
+    fillIn('input', 'ab');
+    andThen(function() {
+        assert.equal(find('ul.translationDiv li:first').text(), 'abacus', 'should show word abacus');
+    });
 });
 
 test('Clicking on "Change language" button should switch headers', function (assert) {
