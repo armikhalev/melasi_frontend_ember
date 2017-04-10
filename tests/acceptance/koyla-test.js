@@ -8,12 +8,14 @@ moduleForAcceptance('Acceptance | koyla', {
     }
 );
 
-// test('Typing "ab" in input should show words starting with "ab-" ', function (assert) {
-//     fillIn('input.wordToTranslate', 'ab');
-//     andThen(function() {
-//         assert.equal(find('ul.translation li:first').text(), 'English: abacus', 'should show word abacus');
-//     });
-// });
+test('Typing "ab" in input should show words starting with "ab-" ', function (assert) {
+    fillIn('input.wordToTranslate', 'ab');
+    keyEvent('input.wordToTranslate', 'keyup', 69);
+
+    andThen(function() {
+        assert.equal(find('ul.translation li:first').text(), 'English: abacus', 'should show word abacus');
+    });
+});
 
 test('Clicking on "Change language" button should switch headers', function (assert) {
     click('button.changeLanguages');
@@ -25,9 +27,8 @@ test('Clicking on "Change language" button should switch headers', function (ass
 
 test('When first language header is "Mela", third header in result is "Dasayna"', function (assert) {   
     click('button.changeLanguages');
-    
     andThen(function() {
-        assert.equal(find('label.languageTranslateTo').text(), 'Mela', 'Should show Mela header');
+        assert.equal(find('label.languageTranslateFrom').text(), 'Mela', 'Should show Mela header');
         assert.equal(find('ul.translation li:nth-child(3)').text().slice(0,7), 'Dasayna', 'should show word "Dasayna"');
     });     
 });
