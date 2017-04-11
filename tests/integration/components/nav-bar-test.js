@@ -5,14 +5,22 @@ moduleForComponent('nav-bar', 'Integration | Component | nav bar', {
   integration: true
 });
 
-test('it renders', function(assert) {
+test('it renders correctly displaying names of the links', function(assert) {
 
-  // Set any properties with this.set('myProperty', 'value');
-  // Handle any actions with this.on('myAction', function(val) { ... });
+  this.set("urls",[
+    {
+      name: 'Latay',
+      path: 'latay'
+    },
+    {
+      name: 'Koyla',
+      path: 'koyla'
+    }
+  ]);
+      
+  this.render(hbs`{{nav-bar urls=urls}}`);
 
-  this.render(hbs`{{nav-bar}}`);
+  assert.equal(this.$('ul li a:first').text(), 'Latay');
+  assert.equal(this.$('ul li a:last').text(), 'Koyla');
 
-  assert.equal(this.$().text().trim(), '');
-
-  assert.equal(this.$().text().trim(), 'template block text');
 });

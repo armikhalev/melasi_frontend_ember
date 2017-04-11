@@ -57,23 +57,23 @@ moduleForComponent('word-filter', 'Integration | Component | word filter', {
     }
 });
 
-test('it renders', function(assert) {
+test('it shows words in order English to Mela', function(assert) {
   return wait().then(() => {
     assert.equal(this.$('ul.translation li:first').text(), "English: wife");
-    assert.equal(this.$('ul.translation li:nth-child(2)').text().trim(), 'Mela: feyleya');
+    assert.equal(this.$('ul.translation li:nth-child(2)').text(), 'Mela: feyleya');
   });
   
 });
 
-test('it renders', function(assert) {
-  this.$('.wordToTranslate input').val('wif').keyup();
+test('it takes input "wif" and shows all the words beginning with that', function(assert) {
+  this.$('input.wordToTranslate').val('wif').keyup();
 
   return wait().then(() => {
     assert.equal(this.$('ul.translation li:first').text(), "English: wife");
-    assert.equal(this.$('ul.translation li:nth-child(2)').text().trim(), 'Mela: feyleya');
+    assert.equal(this.$('ul.translation li:nth-child(2)').text(), "Mela: feyleya");
 
-    assert.equal(this.$('ul.translation li:nth-child(5)').text(), "English: wifi");
-    assert.equal(this.$('ul.translation li:nth-child(6)').text().trim(), 'Mela: foo');
+    assert.equal(this.$('ul.translation li:nth-child(6)').text(), "English: wifi");
+    assert.equal(this.$('ul.translation li:nth-child(7)').text(), "Mela: foo");
   });
 
 });
