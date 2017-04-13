@@ -1,4 +1,5 @@
 import { moduleFor, test } from 'ember-qunit';
+import Ember from 'ember';
 
 moduleFor('controller:koyla', 'Unit | Controller | koyla', {
   // Specify the other units that are required for this test.

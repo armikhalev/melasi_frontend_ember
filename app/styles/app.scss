@@ -1,4 +1,12 @@
+// partials
+@import 'partials/buttons';
+@import 'partials/input';
+@import 'partials/header';
+@import 'partials/well';
+
+// templates
 @import 'nav-bar';
+@import 'koyla';
 
 body {
     width: 100%;

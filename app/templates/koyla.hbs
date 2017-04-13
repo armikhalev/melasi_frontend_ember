@@ -1,10 +1,10 @@
 <div id="koyla_page" class="row text-center col-xs-offset-4 col-xs-4 ">
 
-  <button {{action "changeLanguage_onClick"}} type="submit" class="changeLanguages">Change language</button>
+  <button {{action "changeLanguage_onClick"}} type="submit" class="btn-big btn-green changeLanguages">Change language</button>
 
 
   <div class="form-group">
-    <label class="languageTranslateFrom" for="wordToTranslate">{{ langTranslateFrom }}</label>
+    <label class="big-header languageTranslateFrom" for="wordToTranslate">{{ langTranslateFrom }}</label>
 
     {{#if english}}
       {{#word-filter
@@ -12,7 +12,7 @@
         as |words|}}
 
         <div class="row">
-          <label class="languageTranslateTo">Mela</label>
+          <label class="big-header languageTranslateTo">Mela</label>
           <ul class="translation well well-lg list-unstyled">
             {{#each words as |w|}}
               <li><b>English:</b> {{w.word}}</li>
@@ -30,7 +30,7 @@
         as |las|}}
 
         <div class="row">
-          <label class="formHeader languageTranslateTo">English</label>
+          <label class="big-header languageTranslateTo">English</label>
           <ul class="translation well well-lg list-unstyled">
             {{#each las as |la|}}
               <li><b>Mela:</b> {{la.la}}</li>
