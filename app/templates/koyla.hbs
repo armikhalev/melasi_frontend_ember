@@ -1,8 +1,5 @@
 <div id="koyla_page" class="row text-center col-xs-offset-4 col-xs-4 ">
 
-  <button {{action "changeLanguage_onClick"}} type="submit" class="btn-big btn-green changeLanguages">Change language</button>
-
-
   <div class="form-group">
     <label class="big-header languageTranslateFrom" for="wordToTranslate">{{ langTranslateFrom }}</label>
 
@@ -11,7 +8,10 @@
         filter=(action 'filterByWord')
         as |words|}}
 
-        <div class="row">
+        <button {{action "changeLanguage_onClick"}} type="submit" class="btn-big btn-green changeLanguages">Change language</button>
+
+
+        <div class="row row-right">
           <label class="big-header languageTranslateTo">Mela</label>
           <ul class="translation well well-lg list-unstyled">
             {{#each words as |w|}}
@@ -29,7 +29,10 @@
         filter=(action 'filterByLa')
         as |las|}}
 
-        <div class="row">
+        <button {{action "changeLanguage_onClick"}} type="submit" class="btn-big btn-green changeLanguages">Change language</button>
+
+
+        <div class="row row-right">
           <label class="big-header languageTranslateTo">English</label>
           <ul class="translation well well-lg list-unstyled">
             {{#each las as |la|}}
