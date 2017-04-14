@@ -1,0 +1,53 @@
+.latayPage {
+    position: relative;
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    top: 25px;
+}
+
+.flipContainer {
+	perspective: 1000px;
+    position: relative;
+    height: 200px;
+    width: 16%;
+}
+
+/* flip speed goes here */
+.flipper {
+	transition: 0.6s;
+	transform-style: preserve-3d;
+	position: relative;
+    text-align: center;
+    font-size: x-large;
+    background-color: darkkhaki;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* hide back of pane during swap */
+.frontCard, .backCard {
+	backface-visibility: hidden;
+    position: absolute;
+    top: 25%;
+}
+
+/* front pane, placed above back */
+.frontCard {
+	z-index: 2;
+	/* for firefox 31 */
+	transform: rotateY(0deg);
+}
+
+/* back, initially hidden pane */
+.backCard {
+	transform: rotateY(180deg);
+}
+
+.flipContainer.flip .flipper {
+	transform: rotateY(180deg);
+}
