@@ -1,3 +1,3 @@
-import Word from './word';
+import Word from './word-base';
 
 export default Word.extend({});

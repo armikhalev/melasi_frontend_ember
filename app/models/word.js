@@ -1,7 +1,3 @@
-import DS from 'ember-data';
+import Word from './word-base';
 
-export default DS.Model.extend({
-    word: DS.attr('string'),
-    la: DS.attr('string'),
-    comment: DS.attr('string')
-});
+export default Word.extend({});

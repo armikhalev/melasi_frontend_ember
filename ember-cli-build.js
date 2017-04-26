@@ -6,7 +6,7 @@ module.exports = function(defaults) {
     outputPaths: {
         app: {
           css: {
-            'app': '/assets/mela.css'
+            'app': '/assets/melasi-frontend-ember.css'
           }
         }
       }
