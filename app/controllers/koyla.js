@@ -5,12 +5,33 @@ export default Ember.Controller.extend({
 
   langTranslateFrom: 'English',
   english:true,
+  firstLetters:[],
+  gesewlaLiki:[],
 
   actions: {
     filterByWord(param) {
       // Check the first letter of the input param and get the data from serever. Don't reload data from server anymore.
       if (param !== '' && param.length < 2) {
-        return this.get('store').query('word',{ letter:param });
+        // Check if the param letter was previously used if yes then don't call backend, peek data from local ember store
+        if (this.get('firstLetters').lastIndexOf(param) === -1) {
+                     
+          this.get('firstLetters').pushObject(param);
+          return this.store.query('word',{ letter:param });
+        }
+        else {
+          let search = this.store.peekAll('word');
+          
+          let filtered = search.filter(function(i) {
+            return i.get("word").toLowerCase().indexOf(param.toLowerCase()) !== -1;
+          });
+          
+          if (search.get('length') >= 1000)
+          {
+            this.store.unloadAll();
+          }
+          // store.peekAll() returns Ember.enumerable class object, not a promise. Make it to be promise.
+          return ensurePromise(filtered);
+        } 
       }
       // When input param is more than one letter, peeek all the words from Ember store with first letter as in input param.
       // Check second and all the following letters to be equal to those strings that in Ember store.
@@ -33,10 +54,32 @@ export default Ember.Controller.extend({
         return this.get('store').query('word',{letter:"a"});
       }
     },
+    /***********************************
+     * Mela filter, TEMP, must be DRY *
+     ********************************/
     filterByLa(param) {
       // Check the first letter of the input param and get the data from serever. Don't reload data from server anymore.
       if (param !== '' && param.length < 2) {
-        return this.get('store').query('la',{ letter:param });
+        // Check if the param letter was previously used if yes then don't call backend, peek data from local ember store
+        if (this.get('gesewlaLiki').lastIndexOf(param) === -1) {
+                     
+          this.get('gesewlaLiki').pushObject(param);
+          return this.store.query('la',{ letter:param });
+        }
+        else {
+          let search = this.store.peekAll('la');
+          
+          let filtered = search.filter(function(i) {
+            return i.get("la").toLowerCase().indexOf(param.toLowerCase()) !== -1;
+          });
+          
+          if (search.get('length') >= 1000)
+          {
+            this.store.unloadAll();
+          }
+          // store.peekAll() returns Ember.enumerable class object, not a promise. Make it to be promise.
+          return ensurePromise(filtered);
+        } 
       }
       // When input param is more than one letter, peeek all the words from Ember store with first letter as in input param.
       // Check second and all the following letters to be equal to those strings that in Ember store.
@@ -47,7 +90,7 @@ export default Ember.Controller.extend({
           let filtered = search.filter(function(i) {
             return i.get("la").toLowerCase().indexOf(param.toLowerCase()) !== -1;
           });
-                  
+          
           if (search.get('length') >= 1000)
           {
             this.store.unloadAll();
@@ -56,7 +99,7 @@ export default Ember.Controller.extend({
           return ensurePromise(filtered);
       } 
       else {
-        return this.get('store').query('la',{letter:"a"});
+        return this.get('store').query('word',{letter:"a"});
       }
     },
     changeLanguage_onClick () {
