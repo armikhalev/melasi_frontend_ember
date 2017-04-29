@@ -3,23 +3,33 @@ import { ensurePromise } from '../utils/ensurePromise';
 
 export default Ember.Controller.extend({
 
-  langTranslateFrom: 'English',
-  langTranslateTo: 'Mela',
-  english:true,
-  settings: Ember.computed('english', function(){
+  english_cur:true,
+  settings: Ember.computed('english_cur', function(){
       let settings = {};
-
       // Check which is the current language and change settings accordingly
-      if (this.get('english') === true) {
+      if (this.get('english_cur') === true) {
         settings.letters = 'firstLetters';
         settings.modelQuery = 'word';
+
+        settings.source_language = 'English';
+        settings.target_language = 'Mela';
+
+        settings.source_header = 'English';
+        settings.target_header = 'Mela';
+        settings.comment_header = 'Comment';
       }
-      else
-      {
+      else {
         settings.letters = 'gesewlaLiki';
         settings.modelQuery = 'la';
+        
+        settings.source_language = 'Mela';
+        settings.target_language = 'English';
+
+        settings.source_header = 'Mela';
+        settings.target_header = 'Engila';
+        settings.comment_header = 'Dasayna';
       }
-     return settings;
+      return settings;
   }),
   firstLetters:[],
   gesewlaLiki:[],
@@ -29,21 +39,26 @@ export default Ember.Controller.extend({
         let _letters = this.get('settings').letters;
         let _modelQuery = this.get('settings').modelQuery;
 
-        // Check if the param letter was previously used if yes then don't call backend, peek data from local ember store
-        if  ( (param !== "") && (this.get(_letters).lastIndexOf(param) === -1) ) {             
+        // Check if the param letter was previously used if not then call data from backend
+        if  ( (param !== "") && (this.get(_letters).lastIndexOf(param) === -1) ) { 
+          // Put the first letter typed to the local store to check afterwards if it has already the searched word locally            
           this.get(_letters).pushObject(param);
           return this.store.query(_modelQuery,{ letter:param });
         }
+        // After typing > 1 letters, peek data from local ember store
         else if (this.get(_letters).lastIndexOf(param) !== -1) {
           let search = this.store.peekAll(_modelQuery);
           
           let filtered = search.filter(function(i) {
             return i.get(_modelQuery).toLowerCase().indexOf(param.toLowerCase()) !== -1;
           });
-          
+
+          // Unload local storage to prevent overusing it
           if (search.get('length') >= 1000)
           {
             this.store.unloadAll();
+            this.setProperties({firstLetters:[]});
+            this.setProperties({gesewlaLiki:[]});
           }
           // store.peekAll() returns Ember.enumerable class object, not a promise. Make it to be promise.
           return ensurePromise(filtered);
@@ -53,9 +68,7 @@ export default Ember.Controller.extend({
         }
     },
     changeLanguage_onClick () {
-      this.setProperties({langTranslateFrom: this.langTranslateFrom === 'English' ? 'Mela' : 'English'});
-      this.setProperties({langTranslateTo: this.langTranslateTo === 'Mela' ? 'English' : 'Mela'});
-      this.setProperties({english: this.langTranslateFrom === 'English' ? true : false});
+      this.setProperties({english_cur: !this.english_cur});
     }
   }
 });

@@ -1,51 +1,25 @@
 <div id="koyla_page" class="row text-center col-xs-offset-4 col-xs-4 ">
 
   <div class="form-group">
-    <label class="big-header languageTranslateFrom" for="wordToTranslate">{{ langTranslateFrom }}</label>
+    <label class="big-header languageTranslateFrom" for="wordToTranslate">{{ settings.source_language }}</label>
 
-    {{!--{{#if english}}--}}
       {{#word-filter
         filter=(action 'filterByWord')
         as |words|}}
 
         <button {{action "changeLanguage_onClick"}} type="submit" class="btn-big btn-green changeLanguages">Change language</button>
 
-
         <div class="row row-right">
-          <label class="big-header languageTranslateTo">{{ langTranslateTo }}</label>
+          <label class="big-header languageTranslateTo">{{ settings.target_language }}</label>
           <ul class="translation well well-lg list-unstyled">
             {{#each words as |w|}}
-              <li><b>English:</b> {{w.word}}</li>
-              <li><b>Mela:</b> {{w.la}}</li>
-              <li><b>Notes:</b> {{w.comment}}</li>
+              <li><b>{{ settings.source_header }}:</b> {{if english_cur w.word w.la}}</li>
+              <li><b>{{ settings.target_header }}:</b> {{if english_cur w.la w.word}}</li>
+              <li><b>{{ settings.comment_header }}:</b> {{w.comment}}</li>
               <li>.........................</li><br>
             {{/each}}
           </ul>
         </div>
-
       {{/word-filter}}
-    {{!--{{else}}
-      {{#word-filter
-        filter=(action 'filterByLa')
-        as |las|}}
-
-        <button {{action "changeLanguage_onClick"}} type="submit" class="btn-big btn-green changeLanguages">Change language</button>
-
-
-        <div class="row row-right">
-          <label class="big-header languageTranslateTo">English</label>
-          <ul class="translation well well-lg list-unstyled">
-            {{#each las as |la|}}
-              <li><b>Mela:</b> {{la.la}}</li>
-              <li><b>Engila:</b> {{la.word}}</li>
-              <li><b>Dasayna:</b> {{la.comment}}</li>
-              <li>.........................</li><br>
-            {{/each}}
-          </ul>
-        </div>
-
-      {{/word-filter}}
-    {{/if}}--}}
-
   </div>
 </div>
