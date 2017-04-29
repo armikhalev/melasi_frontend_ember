@@ -3,7 +3,7 @@
   <div class="form-group">
     <label class="big-header languageTranslateFrom" for="wordToTranslate">{{ langTranslateFrom }}</label>
 
-    {{#if english}}
+    {{!--{{#if english}}--}}
       {{#word-filter
         filter=(action 'filterByWord')
         as |words|}}
@@ -12,7 +12,7 @@
 
 
         <div class="row row-right">
-          <label class="big-header languageTranslateTo">Mela</label>
+          <label class="big-header languageTranslateTo">{{ langTranslateTo }}</label>
           <ul class="translation well well-lg list-unstyled">
             {{#each words as |w|}}
               <li><b>English:</b> {{w.word}}</li>
@@ -24,7 +24,7 @@
         </div>
 
       {{/word-filter}}
-    {{else}}
+    {{!--{{else}}
       {{#word-filter
         filter=(action 'filterByLa')
         as |las|}}
@@ -45,7 +45,7 @@
         </div>
 
       {{/word-filter}}
-    {{/if}}
+    {{/if}}--}}
 
   </div>
 </div>
