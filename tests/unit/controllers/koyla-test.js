@@ -20,5 +20,5 @@ test('it returns filtered words', function(assert) {
   controller.set('model', model);
   controller.send('changeLanguage_onClick');
   
-  assert.equal(controller.get('langTranslateFrom'), "Mela","should show Mela");
+  assert.equal(controller.get('settings').source_language, "Mela","should show Mela");
 });
