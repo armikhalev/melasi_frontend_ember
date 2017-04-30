@@ -2,7 +2,8 @@ import Ember from 'ember';
 import { ensurePromise } from '../utils/ensurePromise';
 
 export default Ember.Controller.extend({
-
+  queryParams:['search'],
+  search:"",
   english_cur:true,
   settings: Ember.computed('english_cur', function(){
       let settings = {};
@@ -43,6 +44,8 @@ export default Ember.Controller.extend({
         if  ( (param !== "") && (this.get(_letters).lastIndexOf(param) === -1) ) { 
           // Put the first letter typed to the local store to check afterwards if it has already the searched word locally            
           this.get(_letters).pushObject(param);
+          this.setProperties({search:param});
+
           return this.store.query(_modelQuery,{ letter:param });
         }
         // After typing > 1 letters, peek data from local ember store
@@ -60,6 +63,7 @@ export default Ember.Controller.extend({
             this.setProperties({firstLetters:[]});
             this.setProperties({gesewlaLiki:[]});
           }
+          this.setProperties({search:param});
           // store.peekAll() returns Ember.enumerable class object, not a promise. Make it to be promise.
           return ensurePromise(filtered);
         } 

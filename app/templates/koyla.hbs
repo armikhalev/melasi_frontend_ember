@@ -4,6 +4,7 @@
     <label class="big-header languageTranslateFrom" for="wordToTranslate">{{ settings.source_language }}</label>
 
       {{#word-filter
+        value=search
         filter=(action 'filterByWord')
         as |words|}}
 
