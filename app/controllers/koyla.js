@@ -2,7 +2,7 @@ import Ember from 'ember';
 import { ensurePromise } from '../utils/ensurePromise';
 
 export default Ember.Controller.extend({
-  queryParams:['search'],
+  queryParams:['search','english_cur'],
   search:"",
   english_cur:true,
   settings: Ember.computed('english_cur', function(){
