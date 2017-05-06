@@ -32,3 +32,18 @@ test('When first language header is "Mela", third header in result is "Dasayna"'
         assert.equal(find('ul.translation li:nth-child(3)').text().slice(0,7), 'Dasayna', 'should show word "Dasayna"');
     });     
 });
+
+
+test('Going to url with specified query parameters should show the searched word both in the input and in the result', function (assert) {   
+    visit('/koyla?search=vodka');
+    andThen(function() {
+        assert.equal(find('ul.translation li:nth-child(1)').text().slice(9), 'vodka', 'should show word "vodka"');
+    });     
+});
+
+test('Going to url with specified query parameters which contain change of the translation direction should show the correct language output', function (assert) {   
+    visit('/koyla?english_cur=false&search=fu');
+    andThen(function() {
+        assert.equal(find('ul.translation li:nth-child(1)').text().slice(6), 'fu', 'should show word "fu"');
+    });     
+});
