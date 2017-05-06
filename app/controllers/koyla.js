@@ -44,26 +44,25 @@ export default Ember.Controller.extend({
         if  ( (param !== "") && (this.get(_letters).lastIndexOf(param) === -1) ) { 
           // Put the first letter typed to the local store to check afterwards if it has already the searched word locally            
           this.get(_letters).pushObject(param);
-          this.setProperties({search:param});
 
           return this.store.query(_modelQuery,{ letter:param });
         }
         // After typing > 1 letters, peek data from local ember store
         else if (this.get(_letters).lastIndexOf(param) !== -1) {
-          let search = this.store.peekAll(_modelQuery);
+          let _search = this.store.peekAll(_modelQuery);
           
-          let filtered = search.filter(function(i) {
+          let filtered = _search.filter(function(i) {
             return i.get(_modelQuery).toLowerCase().indexOf(param.toLowerCase()) !== -1;
           });
 
           // Unload local storage to prevent overusing it
-          if (search.get('length') >= 1000)
+          if (_search.get('length') >= 1000)
           {
             this.store.unloadAll();
             this.setProperties({firstLetters:[]});
             this.setProperties({gesewlaLiki:[]});
           }
-          this.setProperties({search:param});
+
           // store.peekAll() returns Ember.enumerable class object, not a promise. Make it to be promise.
           return ensurePromise(filtered);
         } 
