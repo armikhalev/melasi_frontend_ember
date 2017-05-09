@@ -1,18 +1,26 @@
 // mixins
+@import 'typography/header';
 
-// partials
-@import 'partials/buttons';
-@import 'partials/input';
-@import 'partials/header';
-@import 'partials/well';
+@import 'partials/buttons',
+        'partials/input',
+        'partials/well';
 
-// templates
-@import 'nav-bar';
-@import 'koyla';
-@import 'latay';
+@import 'components/nav-bar';
 
-body {
-    width: 100%;
-    position: relative;
-    margin: 0;
-}
+@import 'koyla', 
+        'latay';
+
+// for-phone-only
+// @media (max-width: 599px) is the base style, following the mobile-first approach.
+
+// for-tablet-portrait-up
+@media (min-width: 600px) { @import 'media-queries/tablet-portrait'; }
+
+// for-tablet-landscape-up
+@media (min-width: 900px) { @import 'media-queries/tablet-landscape-up'; }
+
+// for-desktop-up
+@media (min-width: 1200px) { @import 'media-queries/desktop-up'; }
+
+// for-big-desktop-up
+@media (min-width: 1800px) { @import 'media-queries/big-desktop-up'; }

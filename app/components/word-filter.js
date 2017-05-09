@@ -1,9 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  classNames: ['list-filter'],
   value: '',
-
   init() {
     this._super(...arguments);
     let filterInputValue = this.get('value');

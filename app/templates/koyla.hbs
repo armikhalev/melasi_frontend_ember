@@ -1,26 +1,20 @@
-<div id="koyla_page" class="row text-center col-xs-offset-4 col-xs-4 ">
 
-  <div class="form-group">
-    <label class="big-header languageTranslateFrom" for="wordToTranslate">{{ settings.source_language }}</label>
+<label class="koyla-source-label">{{ settings.source_language }}</label>
 
-      {{#word-filter
-        value=search
-        filter=(action 'filterByWord')
-        as |words|}}
+{{#word-filter
+  value=search
+  filter=(action 'filterByWord')
+  as |words|}}
 
-        <button {{action "changeLanguage_onClick"}} type="submit" class="btn-big btn-green changeLanguages">Change language</button>
+  <button {{action "changeLanguage_onClick"}} type="submit" class="koyla-change-button">Change language</button>
 
-        <div class="row row-right">
-          <label class="big-header languageTranslateTo">{{ settings.target_language }}</label>
-          <ul class="translation well well-lg list-unstyled">
-            {{#each words as |w|}}
-              <li><b>{{ settings.source_header }}:</b> {{if english_cur w.word w.la}}</li>
-              <li><b>{{ settings.target_header }}:</b> {{if english_cur w.la w.word}}</li>
-              <li><b>{{ settings.comment_header }}:</b> {{w.comment}}</li>
-              <li>.........................</li><br>
-            {{/each}}
-          </ul>
-        </div>
-      {{/word-filter}}
-  </div>
-</div>
+    <label class="koyla-target-label">{{ settings.target_language }}</label>
+    <ul class="koyla-result-ul">
+      {{#each words as |w|}}
+        <li><b>{{ settings.source_header }}:</b> {{if english_cur w.word w.la}}</li>
+        <li><b>{{ settings.target_header }}:</b> {{if english_cur w.la w.word}}</li>
+        <li><b>{{ settings.comment_header }}:</b> {{w.comment}}</li>
+        <li>.........................</li><br>
+      {{/each}}
+    </ul>
+{{/word-filter}}

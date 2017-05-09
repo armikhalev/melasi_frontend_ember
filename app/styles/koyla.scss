@@ -1,31 +1,13 @@
-#koyla_page {
-
-    ul {
-        list-style-type: none;
-    }
-
-    .row-left {
-        float: left;
-    }
-    
-   .row-right {
-        position: relative;
-        float: right;
-        margin-right: 24px;
-    }
-
-    .languageTranslateFrom {
-        margin-top: 24px;
-        display: inline-block;
-    }
-
-    .languageTranslateTo {
-        text-align: center;
-    }
-
-    .well-lg {
-        width: 505px;
-        margin-top: 40px;
-    }
-
+.koyla-source-label,
+.koyla-target-label {
+    @include big-header;
 }
+
+.koyla-change-button {
+    @include btn-big-grey;
+}
+
+.koyla-result-ul {
+    
+}
+// translation well well-lg list-unstyled
