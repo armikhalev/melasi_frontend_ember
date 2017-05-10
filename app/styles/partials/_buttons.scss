@@ -1,9 +1,9 @@
 @mixin button($width,$height,$color) {
-    border-radius: 10px;
+    background-color: $color;
+    border-radius: $border-radius;
     font-size: 16px;
     height: $height;
     width: $width;
-    background-color: $color;
 }
 
 @mixin btn-big-grey {

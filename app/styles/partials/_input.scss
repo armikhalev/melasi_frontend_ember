@@ -1,10 +1,10 @@
-input {
+@mixin input($width) {
     background-color: cornsilk;
-    height: 50px;
-    width: 20em;
+    border-radius: $border-radius;
     color: saddlebrown;
     font-size: 24px;
-    text-align: center;
+    height: 50px;
     padding: 10px;
-    margin: 24px;
+    text-align: center;
+    width: $width;
 }

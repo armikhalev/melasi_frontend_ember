@@ -1,10 +1,8 @@
-.well {
+@mixin well($width) {
     background-color: rgba(187, 195, 155, 0.3);
-    border-radius: 15px;
+    border-radius: $border-radius;
+    padding: 24px;
+    list-style: none;
+    width: 100%;    
 
-    &.well-lg {
-        width: 100%;
-        margin: auto;    
-        padding: 24px;
-    }
 }
