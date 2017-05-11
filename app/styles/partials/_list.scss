@@ -1,0 +1,24 @@
+@mixin list($color,$background) {
+    ul li {
+        background: initial;
+        border-left: 1px solid $color;
+        border-right: 1px solid $color;
+        list-style: none;
+        padding-left: 10px;
+        padding-right: 10px;
+        transition: background .2s;
+    }
+
+    ul li:hover,
+    ul li a:hover {
+        background: $background;
+    }
+}
+
+@mixin list-floralwhite {
+    @include list(floralwhite, rgba(195, 140, 132, 0.84) );
+
+    ul li a {
+        @include link-sm-floralwhite;
+    }
+}

@@ -1,0 +1,9 @@
+@mixin link($font-size, $color) {
+    color: $color;
+    font-size: $font-size;
+    text-decoration: none;
+}
+
+@mixin link-sm-floralwhite{
+    @include link(20px, floralwhite);
+}

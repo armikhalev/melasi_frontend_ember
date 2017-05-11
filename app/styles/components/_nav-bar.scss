@@ -1,33 +1,17 @@
-.navbar {
+// initial position is at the bottom acc. to mobile design
+.navbar-nav {
+    background: #ff8b4d;
+    bottom: 0px;
+    display: flex;
+    justify-content: center;
     position: fixed;
     width: 100%;
-    bottom: 0px;
-    .container {
-        background: #ff8b4d;
-        display: flex;
-        justify-content: center;
-    }
 
-    .navbar-ul li {
-        display: inline-flex;
-        margin-left: 10px;
-        margin-right: 10px;
-        border-right: 1px solid floralwhite;
-        border-left: 1px solid floralwhite;
-        padding-left: 10px;
-        padding-right: 10px;
-        background: initial;
-        transition: background .2s;
-    }
+    @include list-floralwhite;
 
-    .navbar-ul li:hover,
-    .navbra-ul li a:hover {
-        background: rgba(195, 140, 132, 0.84);
-    }
-
-    .navbar-ul li a {
-        text-decoration: none;
-        font-size: 20px;
-        color: floralwhite;
+    ul li {
+         display: inline-flex;
+         margin-left: 10px;
+         margin-right: 10px;
     }
 }

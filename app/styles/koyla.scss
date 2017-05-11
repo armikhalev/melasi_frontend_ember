@@ -4,10 +4,22 @@
 }
 
 .koyla-change-button {
-    @include btn-big-grey;
+    @include button-big-grey;
 }
 
 .koyla-result-ul {
-    @include well(100%);
+    @include well;
 }
-// translation well well-lg list-unstyled
+
+// Media (min-width: 600px) tablet-portrait
+@mixin koyla-tablet-portrait {
+    .koyla-result-ul li {
+        text-align: center;
+    }
+}
+
+// Media (min-width: 900px) tablet-landscape-up
+
+// Media (min-width 1200px) desktop-up
+
+// Media (min-width 1800px) big-desktop-up

@@ -6,6 +6,6 @@
     width: $width;
 }
 
-@mixin btn-big-grey {
+@mixin button-big-grey {
     @include button(150px, 50px, #eafae6)
 }
