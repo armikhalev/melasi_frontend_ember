@@ -14,6 +14,8 @@ export default Ember.Controller.extend({
 
         settings.source_language = 'English';
         settings.target_language = 'Mela';
+        settings.input_placeholder = 'Type any English word to translate';
+        settings.button_change = 'Change to Mela';
 
         settings.source_header = 'English';
         settings.target_header = 'Mela';
@@ -24,7 +26,9 @@ export default Ember.Controller.extend({
         settings.modelQuery = 'la';
         
         settings.source_language = 'Mela';
-        settings.target_language = 'English';
+        settings.target_language = 'Engila';
+        settings.input_placeholder = 'Ta sayla e la day lapey'
+        settings.button_change = 'Ali tu Engila';
 
         settings.source_header = 'Mela';
         settings.target_header = 'Engila';

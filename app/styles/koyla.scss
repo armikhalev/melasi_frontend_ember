@@ -1,18 +1,31 @@
-.koyla-source-label,
-.koyla-target-label {
-    @include big-header;
+.koyla-source-label {
+    display: none;
 }
 
-.koyla-change-button {
-    @include button-big-grey;
-}
+.koyla-group-label-button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
+    .koyla-target-label {
+        @include big-header;
+    }
+
+    .koyla-change-button {
+        @include button-big-grey;
+    }
+}
 .koyla-result-ul {
     @include well;
+    margin: 0px;
 }
 
 // Media (min-width: 600px) tablet-portrait
 @mixin koyla-tablet-portrait {
+    .koyla-source-label {
+        display: block;
+        @include big-header;
+    }
     .koyla-result-ul li {
         text-align: center;
     }
