@@ -3,13 +3,13 @@
   value=search
   filter=(action 'filterByWord')
   as |words|}}
-  
+   {{#each words as |w|}}
     <ul class="koyla-result-ul">
-      {{#each words as |w|}}
+     
         <li><b>{{ settings.source_header }}:</b> {{if english_cur w.word w.la}}</li>
         <li><b>{{ settings.target_header }}:</b> {{if english_cur w.la w.word}}</li>
         <li><b>{{ settings.comment_header }}:</b> {{w.comment}}</li>
-        <li>.........................</li><br>
-      {{/each}}
+      
     </ul>
+    {{/each}}
 {{/word-filter}}

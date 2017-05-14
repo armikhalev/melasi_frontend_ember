@@ -1,0 +1,118 @@
+@mixin container {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@mixin row {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+}
+
+@mixin center-items-vertical {
+    align-items: center;
+    margin-top:15px;
+    margin-bottom: 15px;
+}
+
+@mixin justify-content($mode) {
+    justify-content: $mode;
+}
+
+@mixin col-1 {
+  width: 8.333333%;
+}
+
+@mixin col-2 {
+  width: 16.666667%;
+}
+
+@mixin col-3 {
+  width: 25%;
+}
+
+@mixin col-4 {
+  width: 33.333333%;
+}
+
+@mixin col-5 {
+  width: 41.666667%;
+}
+
+@mixin col-6 {
+  width: 50%;
+}
+
+@mixin col-7 {
+  width: 58.333333%;
+}
+
+@mixin col-8 {
+  width: 66.666667%;
+}
+
+@mixin col-9 {
+  width: 75%;
+}
+
+@mixin col-10 {
+  width: 83.333333%;
+}
+
+@mixin col-11 {
+  width: 91.666667%;
+}
+
+@mixin col-12 {
+  width: 100%;
+}
+
+/************** Offsets *********************/
+
+@mixin offset-1 {
+  margin-left: 8.333333%;
+}
+
+@mixin offset-2 {
+  margin-left: 16.666667%;
+}
+
+@mixin offset-3 {
+  margin-left: 25%;
+}
+
+@mixin offset-4 {
+  margin-left: 33.333333%;
+}
+
+@mixin offset-5 {
+  margin-left: 41.666667%;
+}
+
+@mixin offset-6 {
+  margin-left: 50%;
+}
+
+@mixin offset-7 {
+  margin-left: 58.333333%;
+}
+
+@mixin offset-8 {
+  margin-left: 66.666667%;
+}
+
+@mixin offset-9 {
+  margin-left: 75%;
+}
+
+@mixin offset-10 {
+  margin-left: 83.333333%;
+}
+
+@mixin offset-11 {
+  margin-left: 91.666667%;
+}

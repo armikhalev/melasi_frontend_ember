@@ -1,38 +1,27 @@
-.koyla-source-label {
-    display: none;
-}
-
-.koyla-group-label-button {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    .koyla-target-label {
-        @include big-header;
-    }
-
-    .koyla-change-button {
-        @include button-big-grey;
-    }
-}
 .koyla-result-ul {
     @include well;
-    margin: 0px;
+    @include col-12;
 }
 
 // Media (min-width: 600px) tablet-portrait
 @mixin koyla-tablet-portrait {
-    .koyla-source-label {
-        display: block;
-        @include big-header;
-    }
-    .koyla-result-ul li {
-        text-align: center;
+    .koyla-result-ul {
+        @include col-5;
     }
 }
 
 // Media (min-width: 900px) tablet-landscape-up
+@mixin koyla-tablet-landscape-up {
+    .koyla-result-ul {
+        @include col-3;
+    }
+}
 
 // Media (min-width 1200px) desktop-up
+@mixin koyla-desktop-up {
+    .koyla-result-ul {
+        @include col-2;
+    }
+}
 
 // Media (min-width 1800px) big-desktop-up

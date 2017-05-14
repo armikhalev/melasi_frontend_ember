@@ -1,4 +1,4 @@
-<label class="koyla-source-label">{{ settings.source_language }}</label>
+<label class="word-filter-source-label">{{ settings.source_language }}</label>
 
 {{input value=value
         english_cur=english_cur
@@ -7,10 +7,12 @@
         placeholder=settings.input_placeholder
         autofocus='autofocus'}}
 
-<section class="koyla-group-label-button">
-    <label class="koyla-target-label">{{ settings.target_language }}</label>
-    
-    <button {{action "changeLanguage_onClick"}} type="submit" class="koyla-change-button">{{ settings.button_change }}</button>
-</section>
-  
-{{yield results}}
+<div class="word-filter-row">
+    <label class="word-filter-target-label">{{ settings.target_language }}</label>
+
+    <button {{action "changeLanguage_onClick"}} type="submit" class="word-filter-change-button">{{ settings.button_change }}</button>
+</div>
+
+<div class="word-results-row">
+    {{yield results}}
+</div>
