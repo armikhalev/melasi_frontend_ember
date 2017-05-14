@@ -12,11 +12,6 @@ export default Ember.Controller.extend({
         settings.letters = 'firstLetters';
         settings.modelQuery = 'word';
 
-        settings.source_language = 'English';
-        settings.target_language = 'Mela';
-        settings.input_placeholder = 'Type any English word to translate';
-        settings.button_change = 'Change to Mela';
-
         settings.source_header = 'English';
         settings.target_header = 'Mela';
         settings.comment_header = 'Comment';
@@ -24,11 +19,6 @@ export default Ember.Controller.extend({
       else {
         settings.letters = 'gesewlaLiki';
         settings.modelQuery = 'la';
-        
-        settings.source_language = 'Mela';
-        settings.target_language = 'Engila';
-        settings.input_placeholder = 'Ta sayla e la day lapey'
-        settings.button_change = 'Ali tu Engila';
 
         settings.source_header = 'Mela';
         settings.target_header = 'Engila';
@@ -73,9 +63,6 @@ export default Ember.Controller.extend({
         else {
           return this.get('store').query('word',{letter:"a"});
         }
-    },
-    changeLanguage_onClick () {
-      this.setProperties({english_cur: !this.english_cur});
     }
   }
 });

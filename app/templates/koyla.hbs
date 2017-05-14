@@ -1,17 +1,9 @@
-
-<label class="koyla-source-label">{{ settings.source_language }}</label>
-
 {{#word-filter
+  english_cur=english_cur
   value=search
   placeholder=settings.input_placeholder
   filter=(action 'filterByWord')
   as |words|}}
-  
-  <section class="koyla-group-label-button">
-    <label class="koyla-target-label">{{ settings.target_language }}</label>
-    
-    <button {{action "changeLanguage_onClick"}} type="submit" class="koyla-change-button">{{ settings.button_change }}</button>
-  </section>
   
     <ul class="koyla-result-ul">
       {{#each words as |w|}}

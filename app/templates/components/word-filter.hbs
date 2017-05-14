@@ -1,6 +1,16 @@
+<label class="koyla-source-label">{{ settings.source_language }}</label>
+
 {{input value=value
+        english_cur=english_cur
         key-up=(action 'handleFilterEntry')
         class="word-filter-input"
         placeholder=placeholder
         autofocus='autofocus'}}
+
+<section class="koyla-group-label-button">
+    <label class="koyla-target-label">{{ settings.target_language }}</label>
+    
+    <button {{action "changeLanguage_onClick"}} type="submit" class="koyla-change-button">{{ settings.button_change }}</button>
+</section>
+  
 {{yield results}}
