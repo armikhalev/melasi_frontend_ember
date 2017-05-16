@@ -1,3 +1,8 @@
+@mixin row-xl {
+    display: inline-flex;
+    align-items: flex-start;
+}
+
 @mixin col-xl {
     -webkit-flex-basis: 0;
         -ms-flex-preferred-size: 0;
@@ -18,6 +23,11 @@
   @mixin col-xl-1 {
     width: 8.333333%;
   }
+    
+  @mixin col-xl-1-h {
+    width: 11.333333%;
+  }
+
   @mixin col-xl-2 {
     width: 16.666667%;
   }
@@ -27,9 +37,19 @@
   @mixin col-xl-4 {
     width: 33.333333%;
   }
+  
+  @mixin col-xl-04 {
+    width: 40%;
+  }
+
   @mixin col-xl-5 {
     width: 41.666667%;
   }
+    
+  @mixin col-xl-5-h {
+    width: 45%;
+  }
+
   @mixin col-xl-6 {
     width: 50%;
   }

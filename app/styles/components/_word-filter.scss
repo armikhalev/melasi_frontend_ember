@@ -48,32 +48,32 @@
 // Media (min-width 1200px) desktop-up
 @mixin word-filter-desktop-up {
     .word-filter-input {
-        @include col-4;
+        @include col-xl-4;
     }
 
     .word-filter-source-label {
-        @include col-1;
+        @include col-xl-1;
     }
 
     .word-filter-row {
-        @include row;
-        @include col-6;
+        @include row-xl;
+        @include col-xl-1-h;
         @include center-items-vertical;
+        margin-right: 45px;
     }
 
     .word-results-row {
-        @include row;
-        @include center-items-vertical;
+        @include row-xl;
+        @include col-xl-6;
     }
 
     .word-filter-target-label {
-        @include big-header;
-        @include col-1;
+        transform: translate(1640%, -333%);
     }
 
     .word-filter-change-button {
-        @include button-big-grey;
-        @include col-3;
+        @include col-xl-9;
+        margin: 0;
     }
 }
 

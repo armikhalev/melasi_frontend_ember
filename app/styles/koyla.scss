@@ -20,7 +20,7 @@
 // Media (min-width 1200px) desktop-up
 @mixin koyla-desktop-up {
     .koyla-result-ul {
-        @include col-2;
+        @include col-xl-04;
     }
 }
 
