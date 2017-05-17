@@ -48,7 +48,7 @@
 // Media (min-width 1200px) desktop-up
 @mixin word-filter-desktop-up {
     .word-filter-input {
-        @include col-xl-4;
+        @include col-xl-5;
     }
 
     .word-filter-source-label {
@@ -56,24 +56,36 @@
     }
 
     .word-filter-row {
-        @include row-xl;
-        @include col-xl-1-h;
-        @include center-items-vertical;
-        margin-right: 45px;
+        @include col-xl-6;
+        display: inline-flex;
+            position: relative;
+
+    top: -64px;
+    right: -91px;
+        // @include row-xl;
+        // @include col-xl-1-h;
+        // @include center-items-vertical;
+        // margin-right: 45px;
     }
 
     .word-results-row {
-        @include row-xl;
-        @include col-xl-6;
+        @include col-xl-5;
+            display: inline-flex;
+    float: right;
+    width: 50.666667%;
+    position: relative;
+    top: -102px;
+        // @include row-xl;
+        // @include col-xl-6;
     }
 
     .word-filter-target-label {
-        transform: translate(1640%, -333%);
+        // transform: translate(1640%, -333%);
     }
 
     .word-filter-change-button {
-        @include col-xl-9;
-        margin: 0;
+        // @include col-xl-9;
+        // margin: 0;
     }
 }
 
