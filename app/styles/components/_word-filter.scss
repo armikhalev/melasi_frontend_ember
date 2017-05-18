@@ -1,10 +1,10 @@
+.word-filter-source-label {
+    display: none;
+}
+
 .word-filter-input {
     @include input;
     width: calc(100% - 4px); // To eliminate 4px added by border-width(2px) from both sides
-}
-
-.word-filter-source-label {
-    display: none;
 }
 
 .word-filter-row {
@@ -37,56 +37,37 @@
 
 // Media (min-width: 900px) tablet-landscape-up
 @mixin word-filter-tablet-landscape-up {
+
     .word-filter-source-label {
         display: block;
         @include row;
         @include center-items-vertical;
         @include big-header;
+        @include col-8;
+        @include offset-2;
     }
+
+    .word-filter-input {
+        @include col-8;
+        @include offset-2;
+        
+    }
+
+    .word-filter-row {
+        @include col-8;
+        @include offset-2;
+    }
+
+    .word-results-row {
+        @include col-8;
+        @include offset-2;
+    }
+    
 }
 
 // Media (min-width 1200px) desktop-up
 @mixin word-filter-desktop-up {
-    .word-filter-input {
-        @include col-xl-5;
-    }
 
-    .word-filter-source-label {
-        @include col-xl-1;
-    }
-
-    .word-filter-row {
-        @include col-xl-6;
-        display: inline-flex;
-            position: relative;
-
-    top: -64px;
-    right: -91px;
-        // @include row-xl;
-        // @include col-xl-1-h;
-        // @include center-items-vertical;
-        // margin-right: 45px;
-    }
-
-    .word-results-row {
-        @include col-xl-5;
-            display: inline-flex;
-    float: right;
-    width: 50.666667%;
-    position: relative;
-    top: -102px;
-        // @include row-xl;
-        // @include col-xl-6;
-    }
-
-    .word-filter-target-label {
-        // transform: translate(1640%, -333%);
-    }
-
-    .word-filter-change-button {
-        // @include col-xl-9;
-        // margin: 0;
-    }
 }
 
 // Media (min-width 1800px) big-desktop-up

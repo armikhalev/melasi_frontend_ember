@@ -20,7 +20,10 @@
  */
 
 // for-tablet-portrait-up
-@media (min-width: 600px) { @import 'media-queries/tablet-portrait'; }
+@media (min-width: 600px) { @import 'media-queries/tablet-portrait-up'; }
+
+// for wide-tablet-portrait-up
+@media (min-width: 720px) { @import 'media-queries/wide-tablet-portrait-up'; }
 
 // for-tablet-landscape-up
 @media (min-width: 900px) { @import 'media-queries/tablet-landscape-up'; }

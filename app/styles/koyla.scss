@@ -6,6 +6,12 @@
 // Media (min-width: 600px) tablet-portrait
 @mixin koyla-tablet-portrait {
     .koyla-result-ul {
+        @include col-xl-04;
+    }
+}
+
+@mixin koyla-wide-tablet-portrait-up {
+    .koyla-result-ul {
         @include col-5;
     }
 }
@@ -13,7 +19,7 @@
 // Media (min-width: 900px) tablet-landscape-up
 @mixin koyla-tablet-landscape-up {
     .koyla-result-ul {
-        @include col-3;
+        @include col-xl-04;
     }
 }
 
