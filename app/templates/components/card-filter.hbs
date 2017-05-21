@@ -1,0 +1,9 @@
+{{input value=value
+        key-up=(action 'handleFilterEntry')
+        class="word-filter-input"
+        placeholder="Type in a basic word"
+        autofocus='autofocus'}}
+
+<div class="word-results-row">
+    {{yield results}}
+</div>

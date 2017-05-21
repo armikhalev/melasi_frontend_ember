@@ -6,14 +6,15 @@
     width: 100%;
     height: 100%;
     overflow: hidden;
-    top: 25px;
 }
 
 .flipContainer {
 	perspective: 1000px;
     position: relative;
-    height: 200px;
-    width: 16%;
+    height: 100px;
+    width: 100%;
+    margin: 5px;
+
 }
 
 /* flip speed goes here */
@@ -27,27 +28,27 @@
     height: 100%;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 /* hide back of pane during swap */
 .frontCard, .backCard {
 	backface-visibility: hidden;
     position: absolute;
-    top: 25%;
 }
 
 /* front pane, placed above back */
 .frontCard {
 	z-index: 2;
 	/* for firefox 31 */
-	transform: rotateY(0deg);
+	transform: rotateX(0deg);
 }
 
 /* back, initially hidden pane */
 .backCard {
-	transform: rotateY(180deg);
+	transform: rotateX(180deg);
 }
 
 .flipContainer.flip .flipper {
-	transform: rotateY(180deg);
+	transform: rotateX(180deg);
 }
