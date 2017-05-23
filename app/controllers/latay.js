@@ -5,12 +5,10 @@ export default Ember.Controller.extend({
     cards: Ember.computed.alias('model'),
     actions: {
         filterByWord(param) {
-            if (param !== undefined) {
-                console.log('it is here', param)
+            if (param) {
                 let _search = this.get('cards');
-                console.log(_search);
                 let filtered = _search.filter(function(i) {
-                    return i.get('card').toLowerCase().indexOf(param.toLowerCase()) !== -1;
+                    return i.get('front').toLowerCase().indexOf(param.toLowerCase()) !== -1;
                 });
 
                 // store.peekAll() returns Ember.enumerable class object, not a promise. Make it to be promise.
@@ -19,6 +17,9 @@ export default Ember.Controller.extend({
             else {
                 return this.store.findAll('card', {reload:false});
             }    
+        },
+        flipCard (_card) {
+            Ember.set(_card, "flip",!_card.get("flip"));
         }
     }
 });

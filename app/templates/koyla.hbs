@@ -1,15 +1,22 @@
+
+<label class="koyla-source-label">{{ settings.source_language }}</label>
+
 {{#word-filter
-  english_cur=english_cur
   value=search
+  placeholder=settings.input_placeholder
   filter=(action 'filterByWord')
   as |words|}}
-   {{#each words as |w|}}
-    <ul class="koyla-result-ul">
-     
-        <li><b>{{ settings.source_header }}:</b> {{if english_cur w.word w.la}}</li>
-        <li><b>{{ settings.target_header }}:</b> {{if english_cur w.la w.word}}</li>
-        <li><b>{{ settings.comment_header }}:</b> {{w.comment}}</li>
-      
-    </ul>
+
+    <label class="koyla-target-label">{{ settings.target_language }}</label>
+    
+    <button {{action "changeLanguage_onClick"}} type="submit" class="koyla-change-button">{{ settings.button_change }}</button>
+
+    {{#each words as |w|}}
+        <ul class="koyla-result-ul">
+            <li><b>{{ settings.source_header }}:</b> {{if english_cur w.word w.la}}</li>
+            <li><b>{{ settings.target_header }}:</b> {{if english_cur w.la w.word}}</li>
+            <li><b>{{ settings.comment_header }}:</b> {{w.comment}}</li>
+        
+        </ul>
     {{/each}}
 {{/word-filter}}

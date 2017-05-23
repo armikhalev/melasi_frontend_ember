@@ -1,3 +1,24 @@
+.koyla-source-label {
+    display: none;
+}
+
+.koyla-row {
+    @include row;
+    @include center-items-vertical;
+    @include justify-content(space-between);
+}
+
+.koyla-target-label {
+    @include big-header;
+    @include col-1;
+}
+
+.koyla-change-button {
+    @include button-big-grey;
+    @include col-4;
+    @include offset-7;
+}
+
 .koyla-result-ul {
     @include well;
     @include col-12;
@@ -18,6 +39,21 @@
 
 // Media (min-width: 900px) tablet-landscape-up
 @mixin koyla-tablet-landscape-up {
+
+    .koyla-source-label {
+        display: block;
+        @include row;
+        @include center-items-vertical;
+        @include big-header;
+        @include col-8;
+        @include offset-2;
+    }
+
+    .koyla-row {
+        @include col-8;
+        @include offset-2;
+    }
+
     .koyla-result-ul {
         @include col-xl-04;
     }

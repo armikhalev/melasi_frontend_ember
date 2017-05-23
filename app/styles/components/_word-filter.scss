@@ -1,33 +1,13 @@
-.word-filter-source-label {
-    display: none;
-}
 
 .word-filter-input {
     @include input;
     width: calc(100% - 4px); // To eliminate 4px added by border-width(2px) from both sides
 }
 
-.word-filter-row {
-    @include row;
-    @include center-items-vertical;
-    @include justify-content(space-between);
-}
-
 .word-results-row {
     @include row;
     @include center-items-vertical;
     @include justify-content(space-between);
-}
-
-.word-filter-target-label {
-    @include big-header;
-    @include col-1;
-}
-
-.word-filter-change-button {
-    @include button-big-grey;
-    @include col-4;
-    @include offset-7;
 }
 
 // Media (min-width: 600px) tablet-portrait
@@ -38,22 +18,7 @@
 // Media (min-width: 900px) tablet-landscape-up
 @mixin word-filter-tablet-landscape-up {
 
-    .word-filter-source-label {
-        display: block;
-        @include row;
-        @include center-items-vertical;
-        @include big-header;
-        @include col-8;
-        @include offset-2;
-    }
-
     .word-filter-input {
-        @include col-8;
-        @include offset-2;
-        
-    }
-
-    .word-filter-row {
         @include col-8;
         @include offset-2;
     }

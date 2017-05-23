@@ -1,29 +1,18 @@
 <div class="latayPage">
-{{#card-filter
-  value=value
-  filter=(action 'filterByWord')
-  as |cards|}}
-   {{#each cards as |card|}}
-    <ul class="koyla-result-ul">
-        
-        <div class="flipContainer {{if card.flip "flip"}}" {{action "flipCard" card}}> 
-            <div class="flipper">
-                <div class="card frontCard">{{card.front}}</div>
-                <div class="card backCard">{{card.back}}</div>
-            </div>
-        </div>
-      
-    </ul>
-    {{/each}}
-{{/card-filter}}
+    {{#word-filter
+    value=value
+    filter=(action 'filterByWord')
+    as |cards|}}
+        {{#each cards as |card|}}
 
-{{!--<div class="latayPage">--}}
-    {{!--{{#each cards as |card|}}
-        <div class="flipContainer {{if card.data.flip "flip"}}" {{action "flipCard" card}}> 
-            <div class="flipper">
-                <div class="card frontCard">{{card.front}}</div>
-                <div class="card backCard">{{card.back}}</div>
+            <div class="flipContainer {{if card.flip "flip"}}" {{action "flipCard" card}}> 
+                <div class="flipper">
+                    <div class="card frontCard">{{card.front}}</div>
+                    <div class="card backCard">{{card.back}}</div>
+                </div>
             </div>
-        </div>
-    {{/each}}--}}
+
+        {{/each}}
+    {{/word-filter}}
+
 </div>
