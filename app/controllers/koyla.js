@@ -76,7 +76,7 @@ export default Ember.Controller.extend({
     },
     changeLanguage_onClick () {
       this.setProperties({english_cur: !this.english_cur});
-      $('input').focus();
+      Ember.$('input').focus();
     }
   }
 });

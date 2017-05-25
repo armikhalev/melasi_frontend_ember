@@ -1,18 +1,16 @@
-<div class="latayPage">
-    {{#word-filter
-    value=value
-    filter=(action 'filterByWord')
-    as |cards|}}
-        {{#each cards as |card|}}
 
-            <div class="flipContainer {{if card.flip "flip"}}" {{action "flipCard" card}}> 
-                <div class="flipper">
-                    <div class="card frontCard">{{card.front}}</div>
-                    <div class="card backCard">{{card.back}}</div>
-                </div>
+{{#word-filter
+value=value
+filter=(action 'filterByWord')
+as |cards|}}
+    {{#each cards as |card|}}
+
+        <div class="latay-flip-container {{if card.flip "latay-flip"}}" {{action "flipCard" card}}> 
+            <div class="latay-flipper">
+                <div class="latay-card latay-frontCard">{{card.front}}</div>
+                <div class="latay-card latay-backCard">{{card.back}}</div>
             </div>
+        </div>
 
-        {{/each}}
-    {{/word-filter}}
-
-</div>
+    {{/each}}
+{{/word-filter}}

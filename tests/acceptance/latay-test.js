@@ -10,13 +10,13 @@ moduleForAcceptance('Acceptance | latay', {
 
 test('Page contains five cards', function (assert) {
     andThen(function() {
-        assert.equal(find('.flipContainer').length, 5, 'should show five cards');
+        assert.equal(find('.latay-flip-container').length, 142, 'should show 142 cards');
     });
 });
 
 test('Cards are clickable', function (assert) {
-    click('.flipContainer:first');
+    click('.latay-flip-container:first');
     andThen(function() {
-        assert.ok(find('.flipContainer:first').hasClass('flip'), 'should add class flip to flip a card');
+        assert.ok(find('.latay-flip-container:first').hasClass('latay-flip'), 'should add class flip to flip a card');
     });
 });
