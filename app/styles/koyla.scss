@@ -25,12 +25,12 @@
 }
 
 // Media (min-width: 600px) tablet-portrait
-@mixin koyla-tablet-portrait {
+@mixin koyla-tablet-portrait-up {
     .koyla-result-ul {
         @include col-xl-04;
     }
 }
-
+// 720px
 @mixin koyla-wide-tablet-portrait-up {
     .koyla-result-ul {
         @include col-5;

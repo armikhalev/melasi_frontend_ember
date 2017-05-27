@@ -1,0 +1,42 @@
+@mixin flip-container($height) {
+	perspective: 1000px;
+    position: relative;
+    height: $height;
+    width: 100%;
+}
+
+/* flip speed goes here */
+@mixin flipper {
+	transition: 0.6s;
+	transform-style: preserve-3d;
+	position: relative;
+    text-align: center;
+    font-size: x-large;
+    background-color: darkkhaki;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* hide back of pane during swap */
+@mixin hideBack {
+	backface-visibility: hidden;
+    position: absolute;
+}
+
+/* front pane, placed above back */
+@mixin frontCard {
+	z-index: 2;
+	/* for firefox 31 */
+	transform: rotateX(0deg);
+}
+
+/* back, initially hidden pane */
+@mixin backCard {
+	transform: rotateX(180deg);
+}
+
+@mixin doFlip {
+	transform: rotateX(180deg);
+}

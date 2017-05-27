@@ -1,44 +1,52 @@
 .latay-flip-container {
-	perspective: 1000px;
-    position: relative;
-    height: 100px;
-    width: 100%;
-    margin: 5px;
-
+    @include flip-container(100px);
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 /* flip speed goes here */
 .latay-flipper {
-	transition: 0.6s;
-	transform-style: preserve-3d;
-	position: relative;
-    text-align: center;
-    font-size: x-large;
-    background-color: darkkhaki;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flipper;
+    margin: 5px;
 }
 
 /* hide back of pane during swap */
 .latay-frontCard, .latay-backCard {
-	backface-visibility: hidden;
-    position: absolute;
+    @include hideBack;
 }
 
 /* front pane, placed above back */
 .latay-frontCard {
-	z-index: 2;
-	/* for firefox 31 */
-	transform: rotateX(0deg);
+    @include frontCard;
 }
 
 /* back, initially hidden pane */
 .latay-backCard {
-	transform: rotateX(180deg);
+	@include backCard;
 }
 
 .latay-flip-container.latay-flip .latay-flipper {
-	transform: rotateX(180deg);
+	@include doFlip;
 }
+
+// Media (min-width: 600px) tablet-portrait
+@mixin latay-tablet-portrait-up {
+
+}
+// 720 px
+@mixin latay-wide-tablet-portrait-up {
+    .latay-flip-container {
+       width:49.666667%;
+    }
+}
+
+// Media (min-width: 900px) tablet-landscape-up
+@mixin latay-tablet-landscape-up {
+
+}
+
+// Media (min-width 1200px) desktop-up
+@mixin latay-desktop-up {
+}
+
+// Media (min-width 1800px) big-desktop-up
