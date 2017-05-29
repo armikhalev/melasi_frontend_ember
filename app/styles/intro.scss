@@ -1,0 +1,45 @@
+.intro-header {
+    @include big-header;
+    margin-top: 1em;
+}
+
+.intro-article {
+    @include article;
+    @include col-12;
+    margin-top: 1em;
+}
+
+// // Media (min-width: 600px) tablet-portrait
+// @mixin intro-tablet-portrait-up {
+// }
+// // 720px
+// @mixin intro-wide-tablet-portrait-up {
+// }
+
+// Media (min-width: 900px) tablet-landscape-up
+@mixin intro-tablet-landscape-up {
+    .intro-header {
+        @include col-8;
+        @include offset-2;
+    }
+
+    .intro-article {
+        @include col-8;
+        @include offset-2;
+    }   
+}
+
+// Media (min-width 1200px) desktop-up
+@mixin intro-desktop-up {
+    .intro-header {
+        @include col-6;
+        @include offset-3;
+    }
+    
+    .intro-article {
+        @include col-6;
+        @include offset-3;
+    }
+}
+
+// Media (min-width 1800px) big-desktop-up
