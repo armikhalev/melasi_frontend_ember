@@ -3,6 +3,7 @@
 value=value
 filter=(action 'filterByWord')
 as |cards|}}
+    <button {{action "flipAllCards_onClick"}} type="submit" class="latay-flip-button">Flip'em all</button>
     {{#each cards as |card|}}
 
         <div class="latay-flip-container {{if card.flip "latay-flip"}}" {{action "flipCard" card}}> 

@@ -7,11 +7,11 @@ export default Ember.Controller.extend({
           path: 'intro'
         },
         {
-          name: 'Latay',
+          name: 'Basic Words',
           path: 'latay'
         },
         {
-          name: 'Koyla',
+          name: 'Translator',
           path: 'koyla'
         }
       ]

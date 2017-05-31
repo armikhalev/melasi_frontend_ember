@@ -74,7 +74,7 @@ export default Ember.Controller.extend({
           return this.get('store').query('word',{letter:"a"});
         }
     },
-    changeLanguage_onClick () {
+    changeLanguage_onClick() {
       this.setProperties({english_cur: !this.english_cur});
       Ember.$('input').focus();
     }

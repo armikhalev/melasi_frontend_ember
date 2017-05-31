@@ -1,3 +1,10 @@
+.latay-flip-button {
+    @include button-big-grey;
+    @include col-4;
+    @include offset-8;
+    margin-bottom: 10px;
+}
+
 .latay-flip-container {
     @include flip-container(100px);
     margin-top: 5px;
@@ -6,8 +13,7 @@
 
 /* flip speed goes here */
 .latay-flipper {
-    @include flipper;
-    margin: 5px;
+    @include flipper(#bdb76b);
 }
 
 /* hide back of pane during swap */

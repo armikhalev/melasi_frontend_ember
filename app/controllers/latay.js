@@ -18,8 +18,16 @@ export default Ember.Controller.extend({
                 return this.store.findAll('card', {reload:false});
             }    
         },
-        flipCard (_card) {
+        flipCard(_card) {
             Ember.set(_card, "flip",!_card.get("flip"));
+        },
+        flipAllCards_onClick() {
+            let that = this; 
+            let cards = this.get('cards');
+            
+            cards.forEach(function(_item){
+                that.send('flipCard',_item);
+            });
         }
     }
 });
