@@ -1,7 +1,6 @@
 .latay-flip-button {
     @include button-big-grey;
     @include col-4;
-    @include offset-8;
     margin-bottom: 10px;
 }
 
@@ -13,14 +12,18 @@
 
 /* flip speed goes here */
 .latay-flipper {
-    @include flipper(#bdb76b);
+    @include flipper($borderColor);
 }
 
 /* hide back of pane during swap */
-.latay-frontCard, .latay-backCard {
+.latay-hide-back {
     @include hideBack;
 }
 
+/* polyfill for SAFARI hide back of pane during swap */
+.latay-safari-hide-back {
+    @include safariHideBack;
+}
 /* front pane, placed above back */
 .latay-frontCard {
     @include frontCard;

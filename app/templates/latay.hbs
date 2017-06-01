@@ -3,13 +3,21 @@
 value=value
 filter=(action 'filterByWord')
 as |cards|}}
-    <button {{action "flipAllCards_onClick"}} type="submit" class="latay-flip-button">Flip'em all</button>
+    <button {{action "allCardsFront_onClick"}} type="submit" class="latay-flip-button">All to Front</button>
+    <button {{action "flipAllCards_onClick"}} type="submit" class="latay-flip-button">Flip'em All</button>
     {{#each cards as |card|}}
 
         <div class="latay-flip-container {{if card.flip "latay-flip"}}" {{action "flipCard" card}}> 
             <div class="latay-flipper">
-                <div class="latay-card latay-frontCard">{{card.front}}</div>
-                <div class="latay-card latay-backCard">{{card.back}}</div>
+
+                {{#if (is-safari)}}
+                    <div class="latay-card latay-frontCard latay-safari-hide-back">{{card.front}}</div>
+                    <div class="latay-card latay-backCard latay-safari-hide-back">{{card.back}}</div>
+                {{else}}
+                    <div class="latay-card latay-frontCard latay-hide-back">{{card.front}}</div>
+                    <div class="latay-card latay-backCard latay-hide-back">{{card.back}}</div>
+                {{/if}}
+
             </div>
         </div>
 

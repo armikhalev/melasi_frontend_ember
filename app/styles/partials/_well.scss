@@ -1,5 +1,5 @@
 @mixin well {
-    background-color: rgba(187, 195, 155, 0.3);
+    background-color: $wellBackground;
     border-radius: $border-radius;
     padding: 24px;
     list-style: none;    

@@ -1,20 +1,20 @@
 // initial position is at the bottom acc. to mobile design
 .navbar-nav {
-    background: #ff8b4d;
+    background: $orange;
     bottom: 0px;
     left:0px;
     right: 0px;
-    display: flex;
-    justify-content: center;
+    // display: flex;
+    // justify-content: center;
     position: fixed;
     width: 100%;
     z-index: 1;
 
     @include list-floralwhite;
 
-    ul li {
-         display: inline-flex;
-         margin-left: 10px;
-         margin-right: 10px;
+    ul {
+         display: flex;
+         justify-content: space-around;
+         margin-left: -40px; // adds up four 10px paddings of -li- elements
     }
 }

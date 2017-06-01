@@ -16,7 +16,7 @@
 }
 
 @mixin list-floralwhite {
-    @include list(floralwhite, rgba(195, 140, 132, 0.84) );
+    @include list(floralwhite, $selectOrange );
 
     ul li a {
         @include link-sm-floralwhite;

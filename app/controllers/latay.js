@@ -24,9 +24,16 @@ export default Ember.Controller.extend({
         flipAllCards_onClick() {
             let that = this; 
             let cards = this.get('cards');
-            
+
             cards.forEach(function(_item){
                 that.send('flipCard',_item);
+            });
+        },
+        allCardsFront_onClick() {
+            let cards = this.get('cards');
+
+            cards.forEach(function(_item){
+                Ember.set(_item, "flip",false);
             });
         }
     }
