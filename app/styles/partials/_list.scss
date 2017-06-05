@@ -22,3 +22,16 @@
         @include link-sm-floralwhite;
     }
 }
+
+@mixin list-floralwhite-noborder {
+    @include list(floralwhite, $selectOrange );
+    
+    ul li {
+        border-left: none;
+        border-right: none;    
+    }
+
+    ul li a {
+        @include link-sm-floralwhite;
+    }
+}

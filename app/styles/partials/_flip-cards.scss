@@ -22,6 +22,9 @@
     -moz-user-select: none;     /* Firefox all */
     -ms-user-select: none;      /* IE 10+ */
     user-select: none;          /* Likely future */  
+    -webkit-box-shadow: 2px 0px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 2px 0px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 2px 0px 5px 0px rgba(0,0,0,0.75);
 }
 
 /* hide back of pane during swap */

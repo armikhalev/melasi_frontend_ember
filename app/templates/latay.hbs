@@ -7,7 +7,7 @@ as |cards|}}
     <button {{action "flipAllCards_onClick"}} type="submit" class="latay-flip-button">Flip'em All</button>
     {{#each cards as |card|}}
 
-        <div class="latay-flip-container {{if card.flip "latay-flip"}}" {{action "flipCard" card}}> 
+        <div class="latay-flip-container {{if card.flip 'latay-flip'}}" {{action "flipCard" card}}> 
             <div class="latay-flipper">
 
                 {{#if (is-safari)}}

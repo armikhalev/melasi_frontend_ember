@@ -1,8 +1,13 @@
-<nav class="navbar-nav">
-  <ul>
-    {{#each urls as |u|}} 
-        <li>{{#link-to u.path}}{{u.name}}{{/link-to}}</li>
-    {{/each}}
-  </ul>
-</nav>
+
+{{#click-outside action=(action "hideMenu")}}
+  <button class="navbar-menu-btn" onclick={{action 'showMenu'}}>Menu</button>
+
+  <nav class="navbar-nav {{if isShowing 'showMenu'}}">
+    <ul>
+      {{#each urls as |u|}} 
+          <li onclick={{action 'hideMenu'}}>{{#link-to u.path}}{{u.name}}{{/link-to}}</li>
+      {{/each}}
+    </ul>
+  </nav>
+{{/click-outside}}
 {{!--top/bottom/l/r position of navbar must be configured to be adjustable--}}

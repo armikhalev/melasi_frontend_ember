@@ -13,6 +13,18 @@ export default Ember.Controller.extend({
         {
           name: 'Translator',
           path: 'koyla'
+        },
+        {
+          name: 'Textbook',
+          path: 'koyla'
+        },
+        {
+          name: 'Texts',
+          path: 'koyla'
+        },
+        {
+          name: 'Videos',
+          path: 'koyla'
         }
       ]
 });

@@ -1,9 +1,14 @@
 @mixin button($width,$height,$color) {
+    -moz-box-shadow: 1px 2px 5px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 1px 2px 5px 0px rgba(0,0,0,0.75);
     background-color: $color;
     border-radius: $border-radius;
+    border: solid floralwhite 1px;
+    box-shadow: 1px 2px 5px 0px rgba(0,0,0,0.75);
+    color:black;
+    cursor: pointer;
     font-size: 16px;
     height: $height;
-    color:black;
     &:focus {
         outline: none;
     }

@@ -1,7 +1,9 @@
-
 .word-filter-input {
     @include input;
     width: calc(100% - 4px); // To eliminate 4px added by border-width(2px) from both sides
+    -webkit-box-shadow: 0px 5px 0px 0px rgba(255,255,255,1);
+    -moz-box-shadow: 0px 5px 0px 0px rgba(255,255,255,1);
+    box-shadow: 0px 5px 0px 0px rgba(255,255,255,1);
 }
 
 .word-results-row {
