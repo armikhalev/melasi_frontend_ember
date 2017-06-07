@@ -1,12 +1,18 @@
 .navbar-menu-btn {
-    border: solid floralwhite 1px;
-    position: fixed;
-    right: 2px;
-    text-align: center;
-    top: 1px;
+    -moz-box-shadow: -2px 0px 5px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: -2px 0px 5px 0px rgba(0,0,0,0.75);
+    background: $orange;
+    border-radius: 50% 0 0 50%;
+    box-shadow: -2px 0px 5px 0px rgba(0,0,0,0.75);
+    color: $borderColor;
+    font-weight: bolder;
     cursor: pointer;
+    height: 50px;
+    position: fixed;
+    right: 0px;
+    top: 30%;
+    width: 20px;
     z-index: 1;
-    @include button(60px,30px,#eafae6);
 }
 .navbar-nav {
     -webkit-box-shadow: -2px 2px 5px 0px rgba(0,0,0,0.75);
@@ -51,10 +57,10 @@
     .navbar-nav {
         height: 22px;
         left:0px;
-        padding-left: 30%;
-        padding-right: 30%;
+        padding-left: 10%;
+        padding-right: 10%;
         transform: translateX(0%); // makes it visible
-        width: 50%;
+        width: 85%;
         
         ul {
             text-align:left;
@@ -79,7 +85,14 @@
 }
 
 // Media (min-width: 900px) tablet-landscape-up
+@mixin navbar-tablet-landscape-up {
 
+    .navbar-nav {
+        padding-left: calc(16.666667% + 24px);
+        padding-right: 16.666667%;
+        width: 66.666667%;
+    }
+}
 // Media (min-width 1200px) desktop-up
 
 // Media (min-width 1800px) big-desktop-up
