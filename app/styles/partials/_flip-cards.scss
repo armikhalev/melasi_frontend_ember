@@ -5,16 +5,20 @@
     width: 100%;
 }
 
-/* flip speed goes here */
-@mixin flipper($borderColor:null,$bgColor:null) {
-    align-items: center;
+@mixin flipper { 
+    width:100%;
+    height: 100%;
+}
+
+/* hide back of pane during swap */
+@mixin cardStyle($borderColor:null,$bgColor:null) {
+	align-items: center;
     background-color: $bgColor;
     border:$borderColor solid 1px;
     display: flex;
     font-size: x-large;
     height: 100%;
     justify-content: center;
-    position: relative;
     text-align: center;
     transform-style: preserve-3d;
     transition: 0.6s;
@@ -27,34 +31,35 @@
     box-shadow: 2px 0px 5px 0px rgba(0,0,0,0.75);
 }
 
-/* hide back of pane during swap */
-@mixin hideBack {
-	backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-    position: absolute;
-}
-
-@mixin safariHideBack {
-    height: 50%;
-    margin: auto;
-    position: absolute;
-    top: 0; left: 0; bottom: 0; right: 0;
-	backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-}
-
 /* front pane, placed above back */
 @mixin frontCard {
-	z-index: 2;
-	/* for firefox 31 */
-	transform: rotateX(0deg);
+	box-shadow:rgba(0, 0, 0, 0.156863) 0px 3px 6px, rgba(0, 0, 0, 0.227451) 0px 3px 6px;
+	backface-visibility: hidden;
+	height: 100%;
+	position: absolute; 
+    text-align: center;
+	width: 100%;
+    transform-style: preserve-3d;
+    transform: rotate3d(1,1,0,0);
+    transition: all .4s ease-in-out;
+	z-index: 0;
+	-webkit-backface-visibility: hidden;
+    -webkit-transform-style: preserve-3d;
+    -webkit-transform: rotate3d(1,1,0,0);
+    -webkit-transition: all .4s ease-in-out;
 }
 
 /* back, initially hidden pane */
 @mixin backCard {
-	transform: rotateX(180deg);
-}
-
-@mixin doFlip {
-	transform: rotateX(180deg);
+    padding-left: 10px;
+    padding-right: 10px;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    transform: rotate3d(1,0,0,-179deg);
+    transition: all .4s ease-in-out;
+	z-index: 0;
+	-webkit-backface-visibility: hidden;
+    -webkit-transform-style: preserve-3d;
+    -webkit-transform: rotate3d(1,0,0,-179deg);
+    -webkit-transition: all .4s ease-in-out;
 }

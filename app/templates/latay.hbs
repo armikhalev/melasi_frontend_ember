@@ -10,13 +10,8 @@ as |cards|}}
         <div class="latay-flip-container {{if card.flip 'latay-flip'}}" {{action "flipCard" card}}> 
             <div class="latay-flipper">
 
-                {{#if (is-safari)}}
-                    <div class="latay-card latay-frontCard latay-safari-hide-back">{{card.front}}</div>
-                    <div class="latay-card latay-backCard latay-safari-hide-back">{{card.back}}</div>
-                {{else}}
-                    <div class="latay-card latay-frontCard latay-hide-back">{{card.front}}</div>
-                    <div class="latay-card latay-backCard latay-hide-back">{{card.back}}</div>
-                {{/if}}
+                    <div class="latay-card latay-frontCard">{{card.front}}</div>
+                    <div class="latay-card latay-backCard">{{card.back}}</div>
 
             </div>
         </div>

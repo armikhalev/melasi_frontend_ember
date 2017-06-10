@@ -5,38 +5,41 @@
 }
 
 .latay-flip-container {
-    @include flip-container(100px);
+    @include flip-container(150px);
     margin-top: 5px;
     margin-bottom: 5px;
 }
 
-/* flip speed goes here */
 .latay-flipper {
-    @include flipper($borderColor);
+    @include flipper;
 }
 
-/* hide back of pane during swap */
-.latay-hide-back {
-    @include hideBack;
-}
-
-/* polyfill for SAFARI hide back of pane during swap */
-.latay-safari-hide-back {
-    @include safariHideBack;
-}
 /* front pane, placed above back */
 .latay-frontCard {
     @include frontCard;
+    @include cardStyle($borderColor);
+}
+
+.latay-flip-container.latay-flip .latay-frontCard {
+    @include frontCard;
+    z-index: 0;
+    -webkit-transform: rotate3d(1,0,0,179deg);
+    transform: rotate3d(1,0,0,179deg);
 }
 
 /* back, initially hidden pane */
 .latay-backCard {
 	@include backCard;
+    @include cardStyle($borderColor);
 }
 
-.latay-flip-container.latay-flip .latay-flipper {
-	@include doFlip;
+.latay-flip-container.latay-flip .latay-backCard {
+	@include backCard;
+    z-index: 0;
+    -webkit-transform: rotate3d(1,1,0,0);
+    transform: rotate3d(1,1,0,0);
 }
+
 
 // Media (min-width: 600px) tablet-portrait
 @mixin latay-tablet-portrait-up {

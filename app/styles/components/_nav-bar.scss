@@ -10,9 +10,13 @@
     height: 50px;
     position: fixed;
     right: 0px;
-    top: 30%;
+    transition: all .2s;
     width: 20px;
     z-index: 1;
+    
+    &:focus {
+        outline: none;
+    }
 }
 .navbar-nav {
     -webkit-box-shadow: -2px 2px 5px 0px rgba(0,0,0,0.75);
@@ -47,6 +51,11 @@
     }
 }
 
+.navbar-settings {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+}
 
 // Media (min-width: 600px) tablet-portrait
 @mixin navbar-tablet-portrait-up {
@@ -55,7 +64,7 @@
     }
 
     .navbar-nav {
-        height: 22px;
+        height: 21px;
         left:0px;
         padding-left: 10%;
         padding-right: 10%;
@@ -66,7 +75,6 @@
             text-align:left;
             padding: 0;
             margin: 0;
-            height: 20px;
             display: flex;
             justify-content: space-around;
             margin-left: -40px; // adds up four 10px paddings of -li- elements
@@ -76,11 +84,8 @@
 
         ul li {
             margin-bottom: auto;
-            border: auto;
             background: $wellBackground;
         }
-
-        @include list-floralwhite;
     }
 }
 
