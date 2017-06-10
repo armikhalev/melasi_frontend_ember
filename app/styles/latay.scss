@@ -14,7 +14,6 @@
     @include flipper;
 }
 
-/* front pane, placed above back */
 .latay-frontCard {
     @include frontCard;
     @include cardStyle($borderColor);
@@ -22,12 +21,9 @@
 
 .latay-flip-container.latay-flip .latay-frontCard {
     @include frontCard;
-    z-index: 0;
-    -webkit-transform: rotate3d(1,0,0,179deg);
-    transform: rotate3d(1,0,0,179deg);
+    @include frontCardFlip;
 }
 
-/* back, initially hidden pane */
 .latay-backCard {
 	@include backCard;
     @include cardStyle($borderColor);
@@ -35,11 +31,8 @@
 
 .latay-flip-container.latay-flip .latay-backCard {
 	@include backCard;
-    z-index: 0;
-    -webkit-transform: rotate3d(1,1,0,0);
-    transform: rotate3d(1,1,0,0);
+    @include backCardFlip;
 }
-
 
 // Media (min-width: 600px) tablet-portrait
 @mixin latay-tablet-portrait-up {

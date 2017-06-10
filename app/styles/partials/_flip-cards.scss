@@ -31,7 +31,6 @@
     box-shadow: 2px 0px 5px 0px rgba(0,0,0,0.75);
 }
 
-/* front pane, placed above back */
 @mixin frontCard {
 	box-shadow:rgba(0, 0, 0, 0.156863) 0px 3px 6px, rgba(0, 0, 0, 0.227451) 0px 3px 6px;
 	backface-visibility: hidden;
@@ -49,7 +48,12 @@
     -webkit-transition: all .4s ease-in-out;
 }
 
-/* back, initially hidden pane */
+@mixin frontCardFlip {
+    z-index: 0;
+    -webkit-transform: rotate3d(1,0,0,179deg);
+    transform: rotate3d(1,0,0,179deg);
+}
+
 @mixin backCard {
     padding-left: 10px;
     padding-right: 10px;
@@ -62,4 +66,10 @@
     -webkit-transform-style: preserve-3d;
     -webkit-transform: rotate3d(1,0,0,-179deg);
     -webkit-transition: all .4s ease-in-out;
+}
+
+@mixin backCardFlip {
+    z-index: 0;
+    -webkit-transform: rotate3d(1,1,0,0);
+    transform: rotate3d(1,1,0,0);
 }

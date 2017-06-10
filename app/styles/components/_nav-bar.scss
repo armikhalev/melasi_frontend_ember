@@ -1,22 +1,10 @@
+/*
+ * @require:
+ *      _buttons.scss,
+ *      _list.scss
+ */
 .navbar-menu-btn {
-    -moz-box-shadow: -2px 0px 5px 0px rgba(0,0,0,0.75);
-    -webkit-box-shadow: -2px 0px 5px 0px rgba(0,0,0,0.75);
-    background: $orange;
-    border-radius: 50% 0 0 50%;
-    box-shadow: -2px 0px 5px 0px rgba(0,0,0,0.75);
-    color: $borderColor;
-    font-weight: bolder;
-    cursor: pointer;
-    height: 50px;
-    position: fixed;
-    right: 0px;
-    transition: all .2s;
-    width: 20px;
-    z-index: 1;
-    
-    &:focus {
-        outline: none;
-    }
+    @include button-slider;
 }
 .navbar-nav {
     -webkit-box-shadow: -2px 2px 5px 0px rgba(0,0,0,0.75);
@@ -49,12 +37,6 @@
     &.showMenu {
         transform: translateX(0%);
     }
-}
-
-.navbar-settings {
-    position: fixed;
-    bottom: 25px;
-    right: 25px;
 }
 
 // Media (min-width: 600px) tablet-portrait
