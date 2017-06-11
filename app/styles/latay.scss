@@ -34,6 +34,18 @@
     @include backCardFlip;
 }
 
+.latay-info-icon {
+    position: fixed;
+    bottom: 5px;
+    right: 5px;
+}
+
+.latay-text-book {
+    position: fixed;
+    bottom: 5px; 
+    width: 100%;
+}
+
 // Media (min-width: 600px) tablet-portrait
 @mixin latay-tablet-portrait-up {
 

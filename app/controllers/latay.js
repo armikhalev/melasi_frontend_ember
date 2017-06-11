@@ -3,6 +3,8 @@ import { ensurePromise } from '../utils/ensurePromise';
 
 export default Ember.Controller.extend({
     cards: Ember.computed.alias('model'),
+    textOpen: false,
+    clickedCard:"",
     actions: {
         filterByWord(param) {
             if (param) {
@@ -35,6 +37,13 @@ export default Ember.Controller.extend({
             cards.forEach(function(_item){
                 Ember.set(_item, "flip",false);
             });
+        },
+        showTextBook(card) {
+            this.setProperties({textOpen: true});
+            this.setProperties({clickedCard: card});
+        },
+        hideTextBook() {
+            this.setProperties({textOpen: false});
         }
     }
 });

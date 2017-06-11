@@ -11,10 +11,21 @@ as |cards|}}
             <div class="latay-flipper">
 
                     <div class="latay-card latay-frontCard">{{card.front}}</div>
-                    <div class="latay-card latay-backCard">{{card.back}}</div>
+                    <div class="latay-card latay-backCard">{{card.back}}
+                        <div class='latay-info-icon' onclick={{disable-bubbling (action "showTextBook" card.back)}}>
+                            {{info-icon}}
+                        </div>
+                    </div>
 
             </div>
         </div>
 
     {{/each}}
 {{/word-filter}}
+
+{{#click-outside action=(action "hideTextBook")}}
+    {{#if textOpen}}
+        {{text-book info=clickedCard}}
+    {{/if}}
+{{/click-outside}}
+    
