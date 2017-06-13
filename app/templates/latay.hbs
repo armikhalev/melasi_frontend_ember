@@ -25,7 +25,7 @@ as |cards|}}
 
 {{#click-outside action=(action "hideTextBook")}}
     {{#if textOpen}}
-        {{text-book info=clickedCard}}
+        {{text-book info=clickedCard hideTextBookComp=(action "hideTextBook")}}
     {{/if}}
 {{/click-outside}}
     
