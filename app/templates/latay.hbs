@@ -12,7 +12,8 @@ as |cards|}}
 
                     <div class="latay-card latay-frontCard">{{card.front}}</div>
                     <div class="latay-card latay-backCard">{{card.back}}
-                        <div class='latay-info-icon' onclick={{disable-bubbling (action "showTextBook" card.grammarCard)}}>
+                        
+                        <div class='latay-info-icon' onclick={{disable-bubbling (action "showTextBook" card.grammarCard.body)}}>
                             {{info-icon}}
                         </div>
                     </div>

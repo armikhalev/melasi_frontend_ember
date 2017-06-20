@@ -1,5 +1,15 @@
 {
   "name": "melasi-frontend-ember",
-  "dependencies": {
-  }
+  "dependencies": {},
+  "homepage": "https://github.com/armikhalev/melasi_frontend_ember",
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
 }
