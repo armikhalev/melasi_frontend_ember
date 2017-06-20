@@ -5,6 +5,8 @@ export default Ember.Controller.extend({
   queryParams:['search','english_cur'],
   search:"",
   english_cur:true,
+  textOpen: false,
+  clickedCard:"",
   settings: Ember.computed('english_cur', function(){
       let settings = {};
       // Check which is the current language and change settings accordingly
@@ -77,6 +79,13 @@ export default Ember.Controller.extend({
     changeLanguage_onClick() {
       this.setProperties({english_cur: !this.english_cur});
       Ember.$('input').focus();
+    },
+    showTextBook(card) {
+        this.setProperties({textOpen: true});
+        this.setProperties({clickedCard: card});
+    },
+    hideTextBook() {
+        this.setProperties({textOpen: false});
     }
   }
 });

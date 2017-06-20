@@ -16,7 +16,18 @@
             <li><b>{{ settings.source_header }}:</b> {{if english_cur w.word w.la}}</li>
             <li><b>{{ settings.target_header }}:</b> {{if english_cur w.la w.word}}</li>
             <li><b>{{ settings.comment_header }}:</b> {{w.comment}}</li>
+
+            <div class='latay-info-icon' onclick={{disable-bubbling (action "showTextBook" w)}}>
+                {{info-icon}}
+            </div>
         
         </ul>
     {{/each}}
 {{/word-filter}}
+
+
+{{#click-outside action=(action "hideTextBook")}}
+    {{#if textOpen}}
+        {{text-book info=clickedCard hideTextBookComp=(action "hideTextBook")}}
+    {{/if}}
+{{/click-outside}}
