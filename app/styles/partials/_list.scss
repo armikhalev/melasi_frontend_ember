@@ -15,6 +15,20 @@
     }
 }
 
+@mixin list-basic {
+    @include list(black, $selectOrange);
+        
+    ul li {
+        border-left: none;
+        border-right: none;    
+    }
+
+    ul li:hover,
+    ul li a:hover {
+        background: none;
+    }
+}
+
 @mixin list-floralwhite {
     @include list(floralwhite, $selectOrange );
 

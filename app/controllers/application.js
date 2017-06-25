@@ -16,15 +16,15 @@ export default Ember.Controller.extend({
         },
         {
           name: 'Textbook',
-          path: 'koyla'
+          path: 'text-book'
         },
-        {
-          name: 'Texts',
-          path: 'koyla'
-        },
-        {
-          name: 'Videos',
-          path: 'koyla'
-        }
+        // {
+        //   name: 'Texts',
+        //   path: 'koyla'
+        // },
+        // {
+        //   name: 'Videos',
+        //   path: 'koyla'
+        // }
       ]
 });

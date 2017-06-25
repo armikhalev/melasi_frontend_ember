@@ -1,0 +1,9 @@
+{{#each grammarCard as |card|}}
+    <div class="textbook-card">
+        <ul>
+            <li><b>{{ card.title }}</b></li>
+            <li>{{ card.body }}</li>
+            <li><b>Comment: </b>{{ card.comment }}</li>
+        </ul>
+    </div>
+{{/each}}

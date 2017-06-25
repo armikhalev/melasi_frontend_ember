@@ -1,0 +1,17 @@
+.textbook-card {
+    background:$textbookBackground;
+    border-radius: $border-radius;
+    @include list-basic;
+}
+
+.textbook-card ul {
+    padding: 24px;
+}
+
+.textbook-card li {
+    margin-bottom: 24px;
+}
+
+.textbook-card li:first-child {
+    text-align: center;
+}
