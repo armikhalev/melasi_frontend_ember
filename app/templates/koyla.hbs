@@ -16,9 +16,11 @@
             <li><b>{{ settings.source_header }}:</b> {{if english_cur w.word w.la}}</li>
             <li><b>{{ settings.target_header }}:</b> {{if english_cur w.la w.word}}</li>
             <li><b>{{ settings.comment_header }}:</b> {{w.comment}}</li>
-            <div class='koyla-info-icon' onclick={{disable-bubbling (action "showTextBook" w.grammarCard.body)}}>
-                {{info-icon}}
-            </div>
+            {{#if w.grammarCard.body}}
+                <div class='koyla-info-icon' onclick={{disable-bubbling (action "showTextBook" w.grammarCard.body)}}>
+                    {{info-icon}}
+                </div>
+            {{/if}}
         </ul>
     {{/each}}
 {{/word-filter}}
