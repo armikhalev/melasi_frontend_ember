@@ -5,7 +5,7 @@ export default Ember.Route.extend({
     model(){
         return this.store.findAll('card', {backgroundReload:false});
     },    
-    afterModel(model) {
+    afterModel() {
         return this.store.findAll('grammar-card');
     }
 });

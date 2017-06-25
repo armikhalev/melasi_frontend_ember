@@ -24,6 +24,13 @@
     @include col-12;
 }
 
+.koyla-info-icon {
+    position: relative;
+    left: 15px;
+    top: 21px;
+    float: right;
+}
+
 // Media (min-width: 600px) tablet-portrait
 @mixin koyla-tablet-portrait-up {
     .koyla-result-ul {
