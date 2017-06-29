@@ -1,16 +1,15 @@
-{{#each-in grammarCards as |cat|}}
-    {{cat}}
-{{/each-in}}
-
-{{#each-in grammarCards as |category cards|}}
-  <h2>Category: {{ category }}</h2>
-  {{#each cards as |card|}}
-    <div class="textbook-card">
-        <ul>
-            <li><b>{{ card.title }}</b></li>
-            <li>{{ card.body }}</li>
-            <li>{{ card.comment }}</li>
-        </ul>
-    </div>
-  {{/each}}
-{{/each-in}}
+{{slide-down-navbar titles=grammarCards}}
+<div class="text-book">
+    {{#each-in grammarCards as |category cards|}}
+    <h2 id="{{category}}" >Category: {{ category }}</h2>
+    {{#each cards as |card|}}
+        <div class="textbook-card">
+            <ul>
+                <li><b>{{ card.title }}</b></li>
+                <li>{{ card.body }}</li>
+                <li>{{ card.comment }}</li>
+            </ul>
+        </div>
+    {{/each}}
+    {{/each-in}}
+</div>

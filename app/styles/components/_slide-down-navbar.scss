@@ -1,0 +1,35 @@
+.slide-down-navbar {
+    position: absolute;
+    background: $wellBackground_09;
+    height: 40px;
+    width: 100px;
+    text-align: center;
+    padding-top: 20px;
+    padding-left: 24px;
+    padding-right: 24px;
+    transition: all .5s;
+    z-index: 1;
+
+    a {
+        display: none;
+    }
+
+    &.touch {
+        height: 100%;
+        width: 100%;
+        padding: 0;
+
+        a {
+            display: block;
+            @include link(18px, #ff5722);
+            margin-top: 24px;
+            font-size: 24px;
+        }
+
+        .slide-down-btn {
+            display: none;
+        }
+
+    }
+}
+

@@ -1,0 +1,6 @@
+<div class="slide-down-navbar {{if isTouched 'touch' }}">
+    <div class="slide-down-btn">Select category</div>
+    {{#each-in titles as |title|}}
+        <a href="#{{title}}">{{title}}</a>
+    {{/each-in}}
+</div>
