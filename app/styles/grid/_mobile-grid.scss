@@ -23,6 +23,12 @@
     justify-content: $mode;
 }
 
+@mixin all-center-items {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 @mixin col-1 {
   width: 8.333333%;
 }

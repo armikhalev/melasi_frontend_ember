@@ -1,10 +1,9 @@
 .text-book {
     position: relative;
-    top: 75px;
 }
 
 .textbook-card {
-    background:$textbookBackground;
+    background:$wellBackground;
     border-radius: $border-radius;
     @include list-basic;
 }
