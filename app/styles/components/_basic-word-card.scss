@@ -1,0 +1,58 @@
+.b-w-card-flip-container {
+    @include flip-container(150px);
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.b-w-card-flipper {
+    @include flipper;
+}
+
+.b-w-card-frontCard {
+    @include frontCard;
+    @include cardStyle($borderColor);
+}
+
+.b-w-card-flip-container .b-w-card-flipper.b-w-card-flip .b-w-card-frontCard {
+    @include frontCard;
+    @include frontCardFlip;
+}
+
+.b-w-card-backCard {
+	@include backCard;
+    @include cardStyle($borderColor);
+}
+
+.b-w-card-flip-container .b-w-card-flipper.b-w-card-flip .b-w-card-backCard {
+	@include backCard;
+    @include backCardFlip;
+}
+
+.b-w-card-info-icon {
+    position: fixed;
+    bottom: 5px;
+    right: 5px;
+}
+
+
+// Media (min-width: 600px) tablet-portrait
+@mixin b-w-card-tablet-portrait-up {
+
+}
+// 720 px
+@mixin b-w-card-wide-tablet-portrait-up {
+    .b-w-card-flip-container {
+       width:49.666667%;
+    }
+}
+
+// Media (min-width: 900px) tablet-landscape-up
+@mixin b-w-card-tablet-landscape-up {
+
+}
+
+// Media (min-width 1200px) desktop-up
+@mixin b-w-card-desktop-up {
+}
+
+// Media (min-width 1800px) big-desktop-up

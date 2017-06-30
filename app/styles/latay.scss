@@ -4,42 +4,6 @@
     margin-bottom: 10px;
 }
 
-.latay-flip-container {
-    @include flip-container(150px);
-    margin-top: 5px;
-    margin-bottom: 5px;
-}
-
-.latay-flipper {
-    @include flipper;
-}
-
-.latay-frontCard {
-    @include frontCard;
-    @include cardStyle($borderColor);
-}
-
-.latay-flip-container.latay-flip .latay-frontCard {
-    @include frontCard;
-    @include frontCardFlip;
-}
-
-.latay-backCard {
-	@include backCard;
-    @include cardStyle($borderColor);
-}
-
-.latay-flip-container.latay-flip .latay-backCard {
-	@include backCard;
-    @include backCardFlip;
-}
-
-.latay-info-icon {
-    position: fixed;
-    bottom: 5px;
-    right: 5px;
-}
-
 .latay-text-book {
     position: fixed;
     bottom: 5px; 
@@ -52,9 +16,7 @@
 }
 // 720 px
 @mixin latay-wide-tablet-portrait-up {
-    .latay-flip-container {
-       width:49.666667%;
-    }
+
 }
 
 // Media (min-width: 900px) tablet-landscape-up

@@ -7,20 +7,7 @@ as |cards|}}
     <button {{action "flipAllCards_onClick"}} type="submit" class="latay-flip-button">Flip'em All</button>
     {{#each cards as |card|}}
 
-        <div class="latay-flip-container {{if card.flip 'latay-flip'}}" {{action "flipCard" card}}> 
-            <div class="latay-flipper">
-
-                    <div class="latay-card latay-frontCard">{{card.front}}</div>
-                    <div class="latay-card latay-backCard">{{card.back}}
-                        {{#if card.grammarCard.body}}
-                            <div class='latay-info-icon' onclick={{disable-bubbling (action "showTextBook" card.grammarCard.body)}}>
-                                {{info-icon}}
-                            </div>
-                        {{/if}}
-                    </div>
-
-            </div>
-        </div>
+        {{basic-word-card card=card flipBasicWordCard=(action "flipCard" card) showTextBook=(action "showTextBook")}}
 
     {{/each}}
 {{/word-filter}}

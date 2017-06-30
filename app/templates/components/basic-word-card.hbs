@@ -1,0 +1,13 @@
+<div class="b-w-card-flipper {{if card.flip 'b-w-card-flip'}}" {{action "flipCard" card}}>
+
+        <div class="b-w-card-card b-w-card-frontCard">{{card.front}}</div>
+        <div class="b-w-card-card b-w-card-backCard">{{card.back}}
+            {{#if card.grammarCard.body}}
+                <div class='b-w-card-info-icon' onclick={{disable-bubbling (action "show" card.grammarCard.body)}}>
+                    {{info-icon}}
+                </div>
+            {{/if}}
+        </div>
+
+</div>
+
