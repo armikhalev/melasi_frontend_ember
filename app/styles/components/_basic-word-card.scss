@@ -1,3 +1,31 @@
+/*
+ * @require:
+ *      _flip-cards.scss
+ */
+
+// On init CSS3 animation
+@keyframes backFlipOnInit {
+    0% {    
+        @include backCard;
+    }
+    
+    50% {
+        @include backCardFlip;
+    }
+}
+
+@keyframes frontFlipOnInit {
+    50% {
+        @include frontCard;
+        @include frontCardFlip;
+    }
+
+    100% {
+        @include frontCard;
+    }
+}
+
+// Card flipper styles
 .b-w-card-flip-container {
     @include flip-container(150px);
     margin-top: 5px;
@@ -11,6 +39,16 @@
 .b-w-card-frontCard {
     @include frontCard;
     @include cardStyle($borderColor);
+}
+
+.b-w-card-flip-container .b-w-card-flipper .b-w-card-frontCard {
+    animation-name: frontFlipOnInit;
+    animation-duration: 1.5s;
+}
+
+.b-w-card-flip-container .b-w-card-flipper .b-w-card-backCard {
+    animation-name: backFlipOnInit;
+    animation-duration: 1.5s;
 }
 
 .b-w-card-flip-container .b-w-card-flipper.b-w-card-flip .b-w-card-frontCard {
@@ -33,7 +71,6 @@
     bottom: 5px;
     right: 5px;
 }
-
 
 // Media (min-width: 600px) tablet-portrait
 @mixin b-w-card-tablet-portrait-up {
