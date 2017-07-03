@@ -7,31 +7,31 @@
     @include button-slider;
 }
 .navbar-nav {
-    -webkit-box-shadow: -2px 2px 5px 0px rgba(0,0,0,0.75);
     -moz-box-shadow: -2px 2px 5px 0px rgba(0,0,0,0.75);
-    box-shadow: -2px 2px 5px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: -2px 2px 5px 0px rgba(0,0,0,0.75);
     background: $orange;
+    box-shadow: -2px 2px 5px 0px rgba(0,0,0,0.75);
     height: 100%;
     position: fixed;
     right: 0;
     top: 0;
-    width: 200px;
-    z-index: 1;
     transform: translateX(102%);
     transition: transform .5s;
+    width: 200px;
+    z-index: 1;
 
     @include list-floralwhite-noborder;
 
     ul {
-        text-align: center;
-        padding: 0;
-        margin: 0;
         margin-top: 40px;
+        margin: 0;
+        padding: 0;
+        text-align: center;
     }
 
     ul li {
-        margin-bottom: 10px;
         background: $wellBackground;
+        margin-bottom: 10px;
     }
 
     &.showMenu {
@@ -46,7 +46,7 @@
     }
 
     .navbar-nav {
-        height: 21px;
+        height: 30px;
         left:0px;
         padding-left: 10%;
         padding-right: 10%;
@@ -54,19 +54,22 @@
         width: 85%;
         
         ul {
-            text-align:left;
-            padding: 0;
-            margin: 0;
             display: flex;
             justify-content: space-around;
-            margin-left: -40px; // adds up four 10px paddings of -li- elements
             margin-bottom: 0;
+            margin-left: -40px; // adds up four 10px paddings of -li- elements
             margin-top: 0;
+            margin: 0;
+            padding: 0;
+            text-align:left;
         }
 
         ul li {
-            margin-bottom: auto;
+            align-items: center;
             background: $wellBackground;
+            display: flex;
+            height: 30px;
+            margin-bottom: auto;
         }
     }
 }

@@ -1,6 +1,22 @@
-{{slide-down-navbar titles=grammarCards}}
+<table class="textbook-alphabet">
+    <h2>Alphabet</h2>
+    <tr>
+        <th>Letter</th>
+        <th>Name</th>
+        <th>Example</th>
+    </tr>
+    {{#each alphabet as |char|}}
+        <tr>
+            <td>{{char.letter}}</td>
+            <td>{{char.name}}</td>
+            <td>{{char.example}}</td>
+        </tr>
+    {{/each}}
+</table>
+
 <div class="text-book">
     {{#each-in grammarCards as |category cards|}}
+
     <h2 id="{{category}}" >Category: {{ category }}</h2>
     {{#each cards as |card|}}
         <div class="textbook-card">
@@ -13,3 +29,4 @@
     {{/each}}
     {{/each-in}}
 </div>
+{{slide-down-navbar titles=grammarCards}}

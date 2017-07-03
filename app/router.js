@@ -10,7 +10,7 @@ Router.map(function() {
   this.route('koyla', {path: '/koyla'});
   this.route('latay', {path: '/latay'});
   this.route('intro', {path: '/'});
-  this.route('text-book');
+  this.route('text-book', function() {});
 });
 
 export default Router;

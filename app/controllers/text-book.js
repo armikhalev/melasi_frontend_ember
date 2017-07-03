@@ -1,7 +1,6 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-    idGrammarCards:["#1","#2","#3"],
     grammarCards: Ember.computed('model', function(){
         let _cardCategories = {};
         
@@ -19,5 +18,9 @@ export default Ember.Controller.extend({
         });
 
         return orderedCategories;
+    }),
+    alphabet: Ember.computed(function(){
+        console.log('vaw it works!')
+        return this.store.findAll('alphabet');
     })
 });

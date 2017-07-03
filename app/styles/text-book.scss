@@ -19,3 +19,8 @@
 .textbook-card li:first-child {
     text-align: center;
 }
+
+.textbook-alphabet {
+    @include table;
+    @include align-center-horizontally;
+}

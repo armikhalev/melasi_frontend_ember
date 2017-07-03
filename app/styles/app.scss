@@ -35,3 +35,10 @@
 
 // for-big-desktop-up
 @media (min-width: 1800px) { @import 'media-queries/big-desktop-up'; }
+
+/*
+ * iOS 9.3 fix
+*/
+[data-ember-action] {
+    cursor: pointer;
+}

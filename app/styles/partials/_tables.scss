@@ -1,0 +1,16 @@
+@mixin table() {
+    table {
+        border-collapse: collapse;
+        overflow-x: auto;
+        width: 100%;
+    }
+
+    th, td {
+        text-align: center;
+        padding: 8px;
+    }
+
+    tr:nth-child(odd){
+        background-color: $wellBackground;
+    }
+}
