@@ -31,9 +31,13 @@
     position: fixed;
     right: 0px;
     transition: all .2s;
-    width: 20px;
+    width: 24px;
     z-index: 1;
     
+    &::before {
+        content: "||"
+    }
+
     &:focus {
         outline: none;
     }

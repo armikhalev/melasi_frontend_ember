@@ -10,7 +10,7 @@
     }
 
     ul li:hover,
-    ul li a:hover {
+    ul a:hover {
         background: $background;
     }
 }
@@ -24,7 +24,7 @@
     }
 
     ul li:hover,
-    ul li a:hover {
+    ul a:hover {
         background: none;
     }
 }
@@ -32,7 +32,7 @@
 @mixin list-floralwhite {
     @include list(floralwhite, $selectOrange );
 
-    ul li a {
+    ul a {
         @include link-sm-floralwhite;
     }
 }
@@ -45,7 +45,7 @@
         border-right: none;    
     }
 
-    ul li a {
+    ul a {
         @include link-sm-floralwhite;
     }
 }

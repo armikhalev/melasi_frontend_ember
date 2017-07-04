@@ -1,5 +1,22 @@
 .main-container {
     @include container;
-    margin-top: 50px;
+    margin-top: 20px;
     cursor: default;
 }
+
+
+// Media (min-width: 600px) tablet-portrait
+@mixin application-tablet-portrait-up {
+    .main-container {
+        @include container;
+        margin-top: 50px;
+        cursor: default;
+    }
+}
+// 720px
+
+// Media (min-width: 900px) tablet-landscape-up
+
+// Media (min-width 1200px) desktop-up
+
+// Media (min-width 1800px) big-desktop-up

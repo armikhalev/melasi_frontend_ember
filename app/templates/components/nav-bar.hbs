@@ -1,11 +1,11 @@
 
 {{#click-outside action=(action "hideMenu")}}
-  <button class="navbar-menu-btn" onclick={{action 'showMenu'}}>||</button>
+  <button class="navbar-menu-btn" onclick={{action 'showMenu'}}></button>
 
   <nav class="navbar-nav {{if isShowing 'showMenu'}}">
     <ul>
       {{#each urls as |u|}} 
-          <li onclick={{action 'hideMenu'}}>{{#link-to u.path}}{{u.name}}{{/link-to}}</li>
+          {{#link-to u.path}}<li onclick={{action 'hideMenu'}}>{{u.name}}</li>{{/link-to}}
       {{/each}}
     </ul>
   </nav>
