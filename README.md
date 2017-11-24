@@ -1,8 +1,5 @@
 # melasi-frontend-ember
-
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
-
+Front-end app for mela-conlang.site, a linguistic project creating a minimalistic but fully functional artificial language for better communication based on the principle of easy memorization due to minimal vocabulary and constructor-like architecture
 ## Prerequisites
 
 You will need the following things properly installed on your computer.
@@ -23,7 +20,7 @@ You will need the following things properly installed on your computer.
 ## Running / Development
 
 * `ember serve`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
+* Visit app at [http://localhost:4200](http://localhost:4200).
 
 ### Code Generators
 
@@ -38,10 +35,6 @@ Make use of the many generators for code, try `ember help generate` for more det
 
 * `ember build` (development)
 * `ember build --environment production` (production)
-
-### Deploying
-
-Specify what it takes to deploy your app.
 
 ## Further Reading / Useful Links
 

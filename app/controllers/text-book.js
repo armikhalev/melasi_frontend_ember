@@ -20,7 +20,6 @@ export default Ember.Controller.extend({
         return orderedCategories;
     }),
     alphabet: Ember.computed(function(){
-        console.log('vaw it works!')
         return this.store.findAll('alphabet');
     })
 });
