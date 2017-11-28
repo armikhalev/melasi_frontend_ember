@@ -3,8 +3,9 @@
     bottom: 0;
     left:0;
     width: 100%;
-    height: 50%;
     background:$textbookBackground;
+    transition: all .5s ease-in-out;
+    -webkit-transition: height 0.5s ease-in-out;
 }
 
 .text-book-info {

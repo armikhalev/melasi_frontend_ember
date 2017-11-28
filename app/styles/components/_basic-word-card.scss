@@ -5,10 +5,10 @@
 
 // On init CSS3 animation
 @keyframes backFlipOnInit {
-    0% {    
+    0% {
         @include backCard;
     }
-    
+
     50% {
         @include backCardFlip;
     }
@@ -57,12 +57,12 @@
 }
 
 .b-w-card-backCard {
-	@include backCard;
+@include backCard;
     @include cardStyle($borderColor);
 }
 
 .b-w-card-flip-container .b-w-card-flipper.b-w-card-flip .b-w-card-backCard {
-	@include backCard;
+@include backCard;
     @include backCardFlip;
 }
 

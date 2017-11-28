@@ -1,19 +1,19 @@
-@import 'variables/variables-base', 
+@import 'variables/variables-base',
         'typography/typography-base',
         'partials/partials-base',
         'grid/grid-base',
         'components/components-base',
 
-        // pages that take all the mixins together 
-        // using only two classes per component.  
-         // First: element class; Second: positioning class.  
+        // pages that take all the mixins together
+        // using only two classes per component.
+         // First: element class; Second: positioning class.
         'application',
-        'koyla', 
+        'koyla',
         'latay',
         'intro',
         'text-book';
-/* 
- * Kudos for media queries to 
+/*
+ * Kudos for media queries to
  * https://medium.freecodecamp.com/the-100-correct-way-to-do-css-breakpoints-88d6a5ba1862
  */
 
@@ -41,4 +41,9 @@
 */
 [data-ember-action] {
     cursor: pointer;
+}
+
+* {
+	user-select:none;
+	-moz-user-select:none;
 }

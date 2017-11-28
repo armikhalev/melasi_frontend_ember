@@ -12,19 +12,19 @@ export default Ember.Controller.extend({
                 let filtered = _search.filter(function(i) {
                     return i.get('front').toLowerCase().indexOf(param.toLowerCase()) !== -1;
                 });
-              
+
                 // store.peekAll() returns Ember.enumerable class object, not a promise. Make it to be promise.
                 return ensurePromise(filtered);
             }
             else {
                 return this.store.findAll('card', {reload:false});
-            }    
+            }
         },
         flipCard(_card) {
             Ember.set(_card, "flip",!_card.get("flip"));
         },
         flipAllCards_onClick() {
-            let that = this; 
+            let that = this;
             let cards = this.get('cards');
 
             cards.forEach(function(_item){
