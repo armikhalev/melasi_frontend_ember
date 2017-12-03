@@ -1,8 +1,7 @@
-
 {{#click-outside action=(action "hideMenu")}}
   <button class="navbar-menu-btn" onclick={{action 'showMenu'}}></button>
 
-  <nav class="navbar-nav {{if isShowing 'showMenu'}}">
+  <nav class="navbar-nav {{if isShowing 'show-menu'}}">
     <ul>
       {{#each urls as |u|}} 
           {{#link-to u.path}}<li onclick={{action 'hideMenu'}}>{{u.name}}</li>{{/link-to}}

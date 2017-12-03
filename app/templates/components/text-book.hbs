@@ -1,7 +1,7 @@
-<div class="text-book-container">
-    <img class="text-book-hide-btn" src="/assets/cancel_button.png" onclick={{action "hideText"}} alt="hide textbook card button">
+<div class="text-book-component-container {{if isShowing 'text-book-component-show' 'text-book-component-hide'}}">
+    <img class="text-book-component-hide-btn" src="/assets/cancel_button.png" onclick={{action "hideText"}} alt="hide textbook component card button">
 
-    <div class="text-book-info">
+    <div class="text-book-component-info">
         {{info}}
     </div>
 </div>

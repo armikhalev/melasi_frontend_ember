@@ -1,4 +1,3 @@
-
 {{#word-filter
 value=value
 filter=(action 'filterByWord')
@@ -13,8 +12,5 @@ as |cards|}}
 {{/word-filter}}
 
 {{#click-outside action=(action "hideTextBook")}}
-    {{#if textOpen}}
-        {{text-book info=clickedCard hideTextBookComp=(action "hideTextBook")}}
-    {{/if}}
+    {{text-book isShowing=textOpen info=clickedCard}}
 {{/click-outside}}
-

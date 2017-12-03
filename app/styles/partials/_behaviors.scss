@@ -1,0 +1,21 @@
+@mixin show($position) {
+    @if $position == 'right' {
+        transform: translateX(0%);
+        transition: transform .5s;
+    }
+    @if $position == 'bottom' {
+        transform: translateY(0%);
+        transition: transform .5s;
+    }
+}    
+
+@mixin hide($position) {
+    @if $position == 'right' {
+        transform: translateX(102%);
+        transition: transform .5s;
+    }
+    @if $position == 'bottom' {
+        transform: translateY(102%);
+        transition: transform .5s;
+    }
+}

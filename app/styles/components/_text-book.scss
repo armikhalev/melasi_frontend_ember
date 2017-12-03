@@ -1,20 +1,26 @@
-.text-book-container {
+.text-book-component-container {
     position: fixed;
     bottom: 0;
     left:0;
     width: 100%;
     background:$textbookBackground;
-    transition: all .5s ease-in-out;
-    -webkit-transition: height 0.5s ease-in-out;
 }
 
-.text-book-info {
+.text-book-component-info {
     margin: 24px;
     line-height: 22px;
 }
 
-.text-book-hide-btn {
+.text-book-component-hide-btn {
     position: absolute;
     right: 5px;
     top: 5px;
+}
+
+.text-book-component-show {
+    @include show(bottom);
+}
+
+.text-book-component-hide {
+    @include hide(bottom);
 }
